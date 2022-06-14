@@ -1,6 +1,6 @@
 options(stringsAsFactors=F)
 if (interactive()) {
-  setwd('~/d/sci/src/neurology_prevention/')
+  setwd('~/d/sci/src/nd_trials/')
 }
 start_time = Sys.time()
 cat(file=stderr(), 'Loading dependencies...'); flush.console()
