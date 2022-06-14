@@ -277,6 +277,15 @@ write(paste('All interventions: ',nrow(ivns),'\n',sep=''),text_stats_path,append
 ivn_count = length(unique(tim$intervention_name[tim$nct %in% trls$nct[trls$dataset_inclusion=='i - include']]))
 write(paste('Interventions curated in included trials: ',ivn_count,'\n',sep=''),text_stats_path,append=T)
 
+ivns %>%
+  inner_join(tim, by=c('intervention_name','intervention_type')) %>%
+  inner_join(trls, by='nct') %>%
+  group_by(intervention_name) %>%
+  summarize(.groups='keep', n_nct=length(unique(nct))) -> nct_per_ivn
+only1 = mean(nct_per_ivn$n_nct==1)
+meanotherwise = mean(nct_per_ivn$n_nct[nct_per_ivn$n_nct > 1])
+sdotherwise = sd(nct_per_ivn$n_nct[nct_per_ivn$n_nct > 1])
+write(paste('Interventions: ',percent(only1),' had just 1 trial, rest had (mean±sd)  ',round(meanotherwise,1),'±',round(sdotherwise,1),' trials.','\n',sep=''),text_stats_path,append=T)
 
 interventions %>% 
   filter(!is.na(target_gene_source)) %>%
@@ -1110,13 +1119,19 @@ ylims = range(prev_forest$y) + c(-0.5, 0.5)
 
 write_tsv(prev_forest, 'qc/preventive_trials_forest.tsv')
 
+prev_forest %>%
+  mutate(text=paste0(disp,' OR=',round(or,2),' P=',formatC(p,format='fg',digits=2))) -> prevtext
+
+write(paste('Preventive trial differences: ',paste0(prevtext$text, collapse='; '), sep=''),text_stats_path,append=T)
+
+
 par(mar=c(2,6,3,1))
 plot(NA, NA, xlim=xlims, ylim=ylims, xaxs='i', yaxs='i', ann=F, axes=F)
 axis(side=1, at=0:10/2, labels=NA, tck=-0.03)
 axis(side=1, at=0:5, labels=NA, tck=-0.06)
 axis(side=1, at=0:5, labels=formatC(0:5,format='f',digits=1), lwd=0, line=-0.5)
-mtext(side=1, at=1, line=1.25, text='odds ratio', cex=0.6)
-mtext(side=1, at=c(0.5,1.5), line=0.75, text=c('depleted','enriched'), cex=0.6)
+mtext(side=1, at=1, line=1.5, text='odds ratio', cex=0.8)
+mtext(side=1, at=c(0.5,1.5), line=0.35, text=c('depleted','enriched'), cex=0.6)
 axis(side=2, at=ylims, labels=NA, lwd.ticks=0)
 abline(v=1, lty=3)
 mtext(side=2, line=0.25, at=prev_forest$y, text=prev_forest$disp, las=2, cex=0.6)

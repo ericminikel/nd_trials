@@ -10,6 +10,8 @@ All interventions: 5297
 
 Interventions curated in included trials: 3630
 
+Interventions: 85% had just 1 trial, rest had (mean±sd)  5±32.9 trials.
+
 Intervention target sources: DB: 993; Pubmed: 278; Alzforum: 244; press release: 46; CT: 19; other: 18
 
 Industry sponsored: N=1240 (38%), proportion PY=64%
@@ -43,6 +45,7 @@ Inclusion/exclusion criteria time trend -- phase iii: mean rose from 9.4 to 18.3
 Inclusion/exclusion criteria time trend -- phase o: mean rose from 12.8 to 12.4, P = 0.79.
 
 Disease stages: stage 0 N = 80 (2.5%); stage 1 N = 5 (0.15%); stage 2 N = 4 (0.12%); stage 3 N = 253 (7.8%); stage 4 N = 2899 (89%)
+Preventive trial differences: industry-sponsored OR=0.32 P=0.000012; drug OR=0.59 P=0.017; behavioral OR=3.1 P=0.00000038; device OR=0.26 P=0.0024; procedure OR=0.61 P=0.77; specified phase OR=0.67 P=0.066; completed OR=0.82 P=0.39; placebo-controlled OR=0.98 P=  1
 Preventive trials duration: 3.39 vs. 2.66 years, P = 0.00039, N = 87 vs 3025
 
 Preventive trials duration:  226 vs.  171 years, P = 0.086, N = 48 vs 1905
