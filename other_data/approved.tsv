@@ -1,0 +1,28 @@
+disease_area	drug	approval_year	approval_source	comment
+parkinson	carbidopa	1975	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=017555	
+parkinson	levodopa	1975	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=017555	
+parkinson	entacapone	1999	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020796	
+parkinson	tolcapone	1998	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020697	
+parkinson	opicapone	2020	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=212489	
+parkinson	pramipexole	1997	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020667	
+parkinson	ropinirole	1997	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020658	
+parkinson	apomorphine	2004	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021264	
+parkinson	rotigotine	2007	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021829	
+parkinson	selegiline	1996	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020647	
+parkinson	rasagiline	2006	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021641	
+parkinson	safinamide	2017	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=207145	
+parkinson	amantadine	2003	https://www.accessdata.fda.gov/drugsatfda_docs/nda/2003/016023_S037_SYMMETREL%20SYRUP%20AND%20TABLETS_PRNTLBL.pdf	prior 1966 approval was as antiviral; 2003 label mentions parkinsonism
+parkinson	istradefylline	2019	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022075	
+parkinson	trihexyphenidyl	2003	https://www.accessdata.fda.gov/drugsatfda_docs/nda/2003/006773_S036_ARTANE.pdf	prior 1949 approval was as antispasmodic
+parkinson	benztropine	1954	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=009193	
+alzheimer	donepezil	1996	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020690	
+alzheimer	rivastigmine	2000	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020823	prior 1997 approval was for hyper/dyslipidemia
+alzheimer	galantamine	2001	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021169	
+alzheimer	memantine	2003	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021487	
+alzheimer	suvorexant	2020	https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/204569Orig1s007lbl.pdf	prior 2014 approval was for insomnia
+ftd/als	riluzole	1995	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020599	
+ftd/als	edaravone	2017	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=209176	
+ftd/als	dextromethorphan	2010	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021879	prior approval as cough suppressant
+ftd/als	quinidine	2010	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021879	prior approval for malaria
+huntington	tetrabenazine	2008	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021894	
+huntington	deutetrabenazine	2017	https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=208082	

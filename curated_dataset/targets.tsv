@@ -1,0 +1,102 @@
+disease_area	gene	source	link	pmids	assoc_year	type	comments	confidence
+huntington	HTT	OMIM	https://omim.org/entry/143100	8458085	1993	original		
+huntington	MSH3	OTG	https://genetics.opentargets.org/study-locus/GCST004691/5_80619201_G_A	28642124	2017	original	HD progression	
+huntington	SOSTDC1	OTG	https://genetics.opentargets.org/variant/7_16455781_T_C	29750799	2018	original	HD age of onset, Hispanic only	
+huntington	MLH1	OTHERGWAS	https://academic.oup.com/hmg/article/26/19/3859/3988351	28934397	2017	original	HD age of onset	
+huntington	MTMR10	OTHERGWAS	https://academic.oup.com/hmg/article/26/19/3859/3988351	28934397	2017	original	HD age of onset	
+huntington	FAN1	OTHERGWAS	https://academic.oup.com/hmg/article/26/19/3859/3988351	28934397	2017	original	HD age of onset	
+huntington	UBR5	OTHERGWAS	https://academic.oup.com/hmg/article/26/19/3859/3988351	28934397	2017	original	HD age of onset	
+alzheimer	APP	OMIM	https://www.omim.org/entry/104760	1671712	1991	original	AD familial 1	
+alzheimer	PSEN1	OMIM	https://www.omim.org/entry/104311	7596406	1995	original	AD 3	
+alzheimer	PSEN2	OMIM	https://www.omim.org/entry/600759	9246482	1996	review	AD 4	
+alzheimer	APOE	OMIM	https://www.omim.org/entry/107741	8102761, 30617256	1993	original, GWAS		
+alzheimer	ABCA7	OTG	https://genetics.opentargets.org/variant/19_1039324_C_G	30617256	2011	GWAS		
+alzheimer	MS4A6A	OTG	https://genetics.opentargets.org/variant/11_60190907_C_A	30617256	2019	GWAS		
+alzheimer	EPHA1	OTG	https://genetics.opentargets.org/variant/7_143411065_T_C	30617256	2011	GWAS		
+alzheimer	CD33	OTG	https://genetics.opentargets.org/variant/19_51224706_C_A	30617256	2011	GWAS		
+alzheimer	ADAMTS4	OTG	https://genetics.opentargets.org/variant/1_161185602_G_A	30617256	2019	GWAS	this gene was noted by the authors in Table 1, although this locus no longer appears in the study's OTG entry	
+alzheimer	CR1	OTG	https://genetics.opentargets.org/variant/1_207613483_A_G	30617256	2009	GWAS		
+alzheimer	BIN1	OTG	https://genetics.opentargets.org/variant/2_127133851_A_C	30617256	2011	GWAS		
+alzheimer	INPPD5	OTG	https://genetics.opentargets.org/variant/2_233117202_G_C	30617256	2019	GWAS		
+alzheimer	CLNK	OTG	https://genetics.opentargets.org/variant/4_11024404_A_G	30617256	2019	GWAS		
+alzheimer	HLA-DRB1	OTG	https://genetics.opentargets.org/variant/6_32615580_A_T	30617256	2019	GWAS	this gene was noted by the authors in Table 1, although this locus no longer appears in the study's OTG entry	
+alzheimer	TREM2	OMIM	https://omim.org/entry/605086	23150934	2013	GWAS		
+alzheimer	CD2AP	OTG	https://genetics.opentargets.org/variant/6_47464901_C_T	30617256	2011	GWAS		
+alzheimer	CNTNAP2	OTG	https://genetics.opentargets.org/variant/7_146252937_C_T	30617256	2019	GWAS		
+alzheimer	CLU	OTG	https://genetics.opentargets.org/variant/8_27607412_A_G	30617256	2009	GWAS		
+alzheimer	ECHDC3	OTG	https://genetics.opentargets.org/variant/10_11675398_T_C	30617256	2017	GWAS		
+alzheimer	PICALM	OTG	https://genetics.opentargets.org/variant/11_86065502_G_A	30617256	2009	GWAS		
+alzheimer	SORL1	OTG	https://genetics.opentargets.org/variant/11_121564878_T_C	30617256	2013	GWAS		
+alzheimer	SLC24A4	OTG	https://genetics.opentargets.org/variant/14_92472511_G_A	30617256	2013	GWAS		RIN3 also a contender
+alzheimer	ADAM10	OTG	https://genetics.opentargets.org/study-locus/GCST005922/15_58753575_A_G	29777097	2018	GWAS		
+alzheimer	APH1B	OTG	https://genetics.opentargets.org/variant/15_63277703_C_T	30617256	2019	GWAS		
+alzheimer	KAT8	OTG	https://genetics.opentargets.org/variant/16_31121779_G_A	30617256	2019	GWAS		PRSS53 and BCKDK are close in the gene prioritization
+alzheimer	SCIMP	OTG	https://genetics.opentargets.org/variant/17_5235685_G_A	30617256	2019	GWAS		RABEP1 higher in gene prioritization
+alzheimer	CASS4	OTG	https://genetics.opentargets.org/variant/20_56423488_A_G	30617256	2019	GWAS		
+alzheimer	PILRA	OTG	https://genetics.opentargets.org/variant/7_100374211_A_G	30617256	2018	GWAS		Jansen OTG but not in paper
+alzheimer	ZNF652	OTG	https://genetics.opentargets.org/variant/17_49373413_G_A	30617256	2019	GWAS		Jansen OTG but not in paper
+alzheimer	ZFP3	OTG	https://genetics.opentargets.org/variant/17_5081152_A_G	30617256	2019	GWAS		
+alzheimer	IQCK	OTG	https://genetics.opentargets.org/study-locus/GCST007511/16_19796841_T_C	30820047	2019	GWAS		
+alzheimer	ACE	OTG	https://genetics.opentargets.org/study-locus/GCST005922/17_63468418_C_T	29777097	1999	GWAS	finally replicated by GWAS in 2018 but prior candidate gene studies had suggested an association: 1999 https://pubmed.ncbi.nlm.nih.gov/9916793/ and 2004 https://pubmed.ncbi.nlm.nih.gov/14872014/	
+alzheimer	ADAMTS1	OTG	https://genetics.opentargets.org/study-locus/GCST007511/21_26784537_C_A	30820047	2019	GWAS		
+alzheimer	WWOX	OTG	https://genetics.opentargets.org/study-locus/GCST007511/16_79321960_G_A	30820047	2019	GWAS	MAF and WWOX are ~tied in L2G score, authors highlighted WWOX	
+parkinson	SNCA	OMIM	https://omim.org/entry/163890	8895469	1996	original	PARK1, PARK4	
+parkinson	PRKN	OMIM	https://omim.org/entry/602544	9042918	1997	original	PARK2; recessive, juvenille onset	Gene is also called Parkin
+parkinson	PINK1	OMIM	https://omim.org/entry/608309	15087508, 15349870	2004	original	PARK6	
+parkinson	DNAJC6	OMIM	https://omim.org/entry/608375	22563501	2012	original	recessive, juvenille onset	
+parkinson	LRRK2	OMIM	https://omim.org/entry/609007	15541308, 15541309	2004	original	PARK8	
+parkinson	VPS35	OMIM	https://omim.org/entry/601501	21763482	2011	original	PARK17	mixed
+parkinson	EIF4G1	OMIM	https://omim.org/entry/600495	21907011	2011	original		mixed
+parkinson	DJ-1	OMIM	https://omim.org/entry/606324	12446870	2003	original	PARK7; recessive, juvenille onset	
+parkinson	ATP13A2	OMIM	https://omim.org/entry/610513	16964263	2006	original	PARK9, or Kufor-Rakeb syndrome	
+parkinson	MAPT	OTG	https://genetics.opentargets.org/variant/17_45917282_C_T	28892059	2017	GWAS		
+parkinson	TMEM175	OTG	https://genetics.opentargets.org/variant/4_958159_T_C	28892059	2017	GWAS		
+parkinson	DCUN1D1	OTG	https://genetics.opentargets.org/variant/3_183044649_G_A	28892059	2017	GWAS		MCCC1 close in gene prioritization
+parkinson	STK39	OTG	https://genetics.opentargets.org/variant/2_168253884_C_T	28892059	2011	GWAS		
+parkinson	ACMSD	OTG	https://genetics.opentargets.org/variant/2_134782397_C_T	28892059	2014	GWAS		
+parkinson	NUCS1	OTG	https://genetics.opentargets.org/variant/1_205754444_C_T	28892059	2017	GWAS		RAB29 close in gene prioritization
+parkinson	VPS37B	OTG	https://genetics.opentargets.org/variant/12_122819039_A_G	28892059	2019	GWAS		
+parkinson	BST1	OTG	https://genetics.opentargets.org/variant/4_15735478_C_A	28892059	2009	GWAS		
+parkinson	GPNMB	OTG	https://genetics.opentargets.org/variant/7_23254127_A_G	28892059	2014	GWAS		
+parkinson	GCH1	OTG	https://genetics.opentargets.org/variant/14_54882151_C_T	28892059	2014	GWAS		
+parkinson	RIT2	OTG	https://genetics.opentargets.org/variant/18_43093415_A_G	28892059	2012	GWAS		
+parkinson	NDUFAF2	OTG	https://genetics.opentargets.org/variant/5_60978096_C_A	28892059	2016	GWAS		NDUFAF2 higher in gene prioritization, but ERCC8 is also a possibility
+parkinson	FAM47E	OTG	https://genetics.opentargets.org/variant/4_76277833_C_T	28892059	2014	GWAS		
+parkinson	VPS13C	OTG	https://genetics.opentargets.org/variant/15_61701935_G_A	28892059	2017	GWAS		
+parkinson	HLA-DQB1	OTG	https://genetics.opentargets.org/variant/6_32698883_C_T	28892059	2017	GWAS		All gene prioritization scores are low
+parkinson	IGSF9B	OTG	https://genetics.opentargets.org/variant/11_133895472_T_C	28892059	2014	GWAS		
+parkinson	SH3GL2	OTG	https://genetics.opentargets.org/variant/9_17579692_T_G	28892059	2016	GWAS		
+parkinson	SIPA1L2	OTG	https://genetics.opentargets.org/variant/12_40220632_C_T	28892059	2014	GWAS		
+parkinson	HIST1H2BL	OTG	https://genetics.opentargets.org/variant/6_27713436_G_A	28892059	2017	GWAS		All gene prioritization scores are low
+parkinson	CTSB	OTG	https://genetics.opentargets.org/variant/8_11849665_A_G	28892059	2017	GWAS		
+parkinson	ITPKB	OTG	https://genetics.opentargets.org/variant/1_226728377_T_C	28892059	2017	GWAS		
+parkinson	FGF20	OTG	https://genetics.opentargets.org/variant/8_16839582_G_A	28892059	2017	GWAS		
+parkinson	MAP4K4	OTG	https://genetics.opentargets.org/variant/2_101796654_T_C	28892059	2017	GWAS		
+parkinson	CAMK2D	OTG	https://genetics.opentargets.org/variant/4_113439216_T_C	28892059	2017	GWAS		GALC is close in gene prioritization
+parkinson	GPR65	OTG	https://genetics.opentargets.org/variant/14_88006268_C_T	28892059	2017	GWAS		
+parkinson	SYT17	OTG	https://genetics.opentargets.org/variant/16_19268142_T_G	28892059	2016	GWAS		SYT17 much higher in gene prioritization, but OTG chose CLEC19A
+parkinson	TMEM229B	OTG	https://genetics.opentargets.org/variant/14_67517653_T_A	28892059	2014	GWAS		closest gene is PLEKHH1 but much lower score
+parkinson	TOX3	OTG	https://genetics.opentargets.org/variant/16_52565276_C_T	28892059	2017	GWAS		
+parkinson	ITGA8	OTG	https://genetics.opentargets.org/variant/10_15527599_C_A	28892059	2017	GWAS		
+parkinson	TBC1D5	OTG	https://genetics.opentargets.org/variant/3_18235996_T_G	28892059	2017	GWAS		
+parkinson	SCN2A	OTG	https://genetics.opentargets.org/variant/2_165277122_C_T	28892059	2017	GWAS		SCN3A was also a contender in earlier OTG releases, but has now dropped to a distant second in L2G score
+parkinson	GBA	OMIM	https://omim.org/entry/606463	15525722	2004	original	evidence in Gaucher patients prior to 2004	
+ftd/als	C9orf72	OMIM	https://www.omim.org/entry/614260	21944778,21944779	2011	original		
+ftd/als	MOBP	OTG	https://genetics.opentargets.org/study-locus/GCST004692/3_39492990_A_G	27455348	2016	original		
+ftd/als	MAPT	OMIM	https://omim.org/entry/157140	9856453	1998	original		
+ftd/als	TARDBP	OMIM	https://omim.org/entry/605078	18372902	2008	original	ALS10, Frontotemporal lobar degeneration	
+ftd/als	SOD1	OMIM	https://omim.org/entry/147450#147	8446170	1993	original	ALS1	
+ftd/als	CHMP2B	OMIM	https://omim.org/entry/609512	16041373	2005	original	ALS17	weak
+ftd/als	FUS	OMIM	https://omim.org/entry/137070	19251628	2009	original	ALS6	
+ftd/als	ANG	OMIM	https://omim.org/entry/105850	16501576	2006	original	ALS9	
+ftd/als	SQSTM1	OMIM	https://omim.org/entry/601530	22084127	2011	original	ALS3	mixed
+ftd/als	MATR3	OMIM	https://omim.org/entry/164015	19344878	2009	original	ALS21	
+ftd/als	MOB3B	OTG	https://genetics.opentargets.org/variant/9_27543384_C_T	29566793	2016	GWAS		weak -- C9orf72 is second in gene prioritization
+ftd/als	SLC46A1	OTG	https://genetics.opentargets.org/variant/17_28392769_G_A	27455348	2016	GWAS		SARM1 is higher in gene prioritization
+ftd/als	UNC13A	OTG	https://genetics.opentargets.org/variant/19_17642430_C_G	29566793	2009	GWAS		
+ftd/als	SCFD1	OTG	https://genetics.opentargets.org/variant/14_30678292_C_T	27455348	2016	GWAS		
+ftd/als	TBK1	OTG	https://genetics.opentargets.org/variant/12_64488187_G_A	29566793	2018	GWAS		RASSF3 is closest gene but far lower in ranking
+ftd/als	GPX3	OTG	https://genetics.opentargets.org/variant/5_151031274_C_T	29566793	2018	GWAS		
+ftd/als	HLA-DRA	OTG	https://genetics.opentargets.org/variant/6_32461942_C_A	24943344	2014	GWAS	for FTD in particular	
+ftd/als	TMEM106B	OTG	https://genetics.opentargets.org/variant/7_12243703_G_C	29724592	2018	GWAS		
+ftd/als	GFRA2	OTG	https://genetics.opentargets.org/variant/8_21763735_C_A	29724592	2018	GWAS		

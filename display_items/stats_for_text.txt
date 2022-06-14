@@ -1,0 +1,113 @@
+Last updated: 2022-06-14
+
+Inclusion/exclusion criteria count curated: 75
+
+Trials considered: 4542
+
+Trials curated: 3241
+
+All interventions: 5297
+
+Interventions curated in included trials: 3630
+
+Intervention target sources: DB: 993; Pubmed: 278; Alzforum: 244; press release: 46; CT: 19; other: 18
+
+Industry sponsored: N=1240 (38%), proportion PY=64%
+
+Drug trials: N=1865 (58%), proportion PY=76%
+
+Industry sponsored drug trials: N=1107 (34%), proportion PY=61%
+
+Top 1 trial PY: industry-drug: 3.8% non:13%
+
+Top 33% of trials: industry-drug: 25 trials; non: 6 trials.
+
+≤20 PY trials: industry-drug: 15%; non: 34%.
+
+Industry-drug vs. other - placebo OR: 3.1, P = 1e-50.
+
+Industry-drug vs. other - completed OR: 2.2, P = 6e-25.
+
+Industry-drug vs. other - specified phase OR: 136.7, P = 1e-272.
+
+Inclusion/exclusion criteria time trend -- Industry-drug: mean rose from 9.2 to 17.2, P = 2.6e-10.
+
+Inclusion/exclusion criteria time trend -- All other: mean rose from 13.3 to 13.4, P = 0.31.
+
+Inclusion/exclusion criteria time trend -- phase i: mean rose from 9.2 to 14.8, P = 0.022.
+
+Inclusion/exclusion criteria time trend -- phase ii: mean rose from 13.8 to 19.0, P = 5.6e-06.
+
+Inclusion/exclusion criteria time trend -- phase iii: mean rose from 9.4 to 18.3, P = 3.6e-09.
+
+Inclusion/exclusion criteria time trend -- phase o: mean rose from 12.8 to 12.4, P = 0.79.
+
+Disease stages: stage 0 N = 80 (2.5%); stage 1 N = 5 (0.15%); stage 2 N = 4 (0.12%); stage 3 N = 253 (7.8%); stage 4 N = 2899 (89%)
+Preventive trials duration: 3.39 vs. 2.66 years, P = 0.00039, N = 87 vs 3025
+
+Preventive trials duration:  226 vs.  171 years, P = 0.086, N = 48 vs 1905
+
+Ordinal logit model: [disease] stage ~ year: P = 2e-15
+
+Trials at disease stage < 4: 8.3% in 2000-2003, 15% in 2017-2020, 
+
+Score/test: N=1833 (57%) trials used any.
+
+Score/test: N=911 (28%) trials used MMSE.
+
+Score/test: N=757 (23%) trials used Hoehn and Yahr.
+
+MMSE: least impaired 25.6 to 27.6 P = 2.2e-05, most impaired 13.6 to 17.7 P = 1e-05
+
+H&Y: least impaired 1.6 to 1.2 P = 0.0024, most impaired 3.8 to 3.1 P = 5.8e-10
+
+Enrichment for approved targets: OR=153.7 P=0.00
+
+Enrichment for supported targets: OR=13.4 P=0.00
+
+Drug trials: N=1865
+
+Unique molecular entities: N=750
+
+Pre-approval and post-approval: total proportion PY = 18%
+
+Pre-approval: proportion PY = 4.5%
+
+Post-approval: proportion PY = 13%
+
+Pre-approval vs. post-approval: N trials = 56 vs 263 (ratio: 4.7) PY = 32,899 vs 95,164 (ratio: 2.9
+
+Donepezil N trials = 56
+
+Novel hypotheses: total proportion PY = 48%
+
+Novel hypotheses: fraction lacking genetic support = 432/577
+
+Genetically supported vs. unsupported novel hypotheses: N trials = 145 vs 432 (ratio: 3) PY = 119,102 vs 232,382 (ratio: 2
+
+Novel unsupported targets: 307/432 (71%) no target assigned (184 unique drugs); 26  MAPT; 23  BACE1
+
+Repurposing categories:  34% 
+
+Targets tested:  344 
+
+Repurposed targets:  272 
+
+Pivots from one neurodegenerative disease to another:  56 
+
+Other repurposing sources: neurology N= 194  metabolic N= 72  cardiovascular N= 46 
+
+All non-ND repurposing sources: N= 557 
+
+Top repurposed drug:  botulinum toxin a , N= 17 
+
+Gene-disease links identified:  101 
+
+Novel supported hypotheses:  16 
+
+Prospective trials based on genetics: mean  13  years, min  5 
+
+APP: 69% of trials, 84% of PY
+
+Preventive, genetically supported trials:  NCT01998841, NCT02008357, NCT01760005 
+
