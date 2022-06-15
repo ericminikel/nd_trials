@@ -112,5 +112,9 @@ Prospective trials based on genetics: mean  13  years, min  5
 
 APP: 69% of trials, 84% of PY
 
+Top 2 trials:  NCT00010803 ginkgo biloba, NCT00276510 ginkgo biloba  total  55278.7542778919  PY. 
+
+Top genetically supported agent:  bapineuzumab  total  28605.478439425  PY. 
+
 Preventive, genetically supported trials:  NCT01998841, NCT02008357, NCT01760005 
 

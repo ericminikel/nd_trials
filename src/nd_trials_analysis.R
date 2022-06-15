@@ -1843,6 +1843,12 @@ for (i in 1:nrow(ymeta)) {
 }
 mtext(LETTERS[panel], side=3, cex=1.5, adj = -0.2, line = 0.5); panel = panel + 1
 
+tirc1 %>% arrange(desc(patient_years)) %>% select(nct, year, intervention_name, drug, patient_years) %>% head(2) -> top2trials
+tirc1 %>% filter(classification=='novel, supported') %>% group_by(drug) %>% summarize(.groups='keep', sumpy=sum(patient_years, na.rm=T)) %>% arrange(desc(sumpy)) %>% head(1) -> topgensupagent
+
+write(paste('Top 2 trials: ',paste(top2trials$nct, top2trials$drug, collapse=', '),' total ',sum(top2trials$patient_years),' PY.','\n'),text_stats_path,append=T)
+write(paste('Top genetically supported agent: ',topgensupagent$drug,' total ',sum(topgensupagent$sumpy),' PY.','\n'),text_stats_path,append=T)
+
 trls[trls$earliest %in% 0:2 & trls$nct %in% tirc1$nct[tirc1$classification=='novel, supported'],] -> prev_gsup_trials
 
 write(paste('Preventive, genetically supported trials: ',paste(prev_gsup_trials$nct, collapse=', '),'\n'),text_stats_path,append=T)
@@ -1851,5 +1857,6 @@ silence_message = dev.off()
 
 
 cat(file=stderr(), paste0('done!\nAll tasks completed in ',round(as.numeric(Sys.time() - start_time),1),' seconds.\n')); flush.console()
+
 
 
