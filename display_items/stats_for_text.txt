@@ -88,7 +88,7 @@ Novel hypotheses: fraction lacking genetic support = 432/577
 
 Genetically supported vs. unsupported novel hypotheses: N trials = 145 vs 432 (ratio: 3) PY = 119,102 vs 232,382 (ratio: 2
 
-Novel unsupported targets: 307/432 (71%) no target assigned (184 unique drugs); 26  MAPT; 23  BACE1
+Novel unsupported targets: 307/432 (71%) no target assigned (184 unique drugs); 23  MAPT; 23  BACE1
 
 Repurposing categories:  34% 
 

@@ -1,46 +1,55 @@
-target_gene	n
-	307
-MAPT	26
-BACE1	23
-AGER	5
-PDE9A	5
-GDNF	4
-GRM4	4
-FYN	3
-NRTN	3
-SIRT1	3
-TERT	3
-CAPN1	2
-FLNA	2
-GAD1	2
-GHSR	2
-GSK3B	2
-MAPK14	2
-MPO	2
-NGF	2
-NGFR	2
-PDGFB	2
-RIPK1	2
-RTN4	2
-ABL2	1
-AHR	1
-ALOX15	1
-CD40LG	1
-HGF	1
-IGF1	1
-KDM1A	1
-MAP3K12	1
-MLNR	1
-MPC1	1
-OPRL1	1
-P2RY6	1
-PDE1C	1
-PLA2G7	1
-PSEN1	1
-QPCT	1
-SEMA4D	1
-SLC6A9	1
-SORT1	1
-STAT3	1
-TMEM97	1
-TNNT3	1
+disease_area	target_gene	n
+alzheimer		152
+parkinson		84
+ftd/als		57
+alzheimer	BACE1	23
+alzheimer	MAPT	23
+huntington		9
+alzheimer	AGER	5
+alzheimer	PDE9A	5
+other/unspecified		5
+parkinson	GDNF	4
+parkinson	GRM4	4
+alzheimer	TERT	3
+huntington	SIRT1	3
+other/unspecified	MAPT	3
+parkinson	NRTN	3
+alzheimer	CAPN1	2
+alzheimer	FLNA	2
+alzheimer	FYN	2
+alzheimer	GSK3B	2
+alzheimer	NGF	2
+alzheimer	NGFR	2
+ftd/als	RTN4	2
+parkinson	GAD1	2
+parkinson	MPO	2
+parkinson	PDGFB	2
+alzheimer	ABL2	1
+alzheimer	GHSR	1
+alzheimer	KDM1A	1
+alzheimer	MAPK14	1
+alzheimer	MPC1	1
+alzheimer	P2RY6	1
+alzheimer	PLA2G7	1
+alzheimer	QPCT	1
+alzheimer	RIPK1	1
+alzheimer	SLC6A9	1
+alzheimer	STAT3	1
+alzheimer	TMEM97	1
+ftd/als	CD40LG	1
+ftd/als	HGF	1
+ftd/als	IGF1	1
+ftd/als	MAP3K12	1
+ftd/als	RIPK1	1
+ftd/als	TNNT3	1
+huntington	AHR	1
+huntington	MAPK14	1
+huntington	SEMA4D	1
+other/unspecified	PSEN1	1
+other/unspecified	SORT1	1
+parkinson	ALOX15	1
+parkinson	FYN	1
+parkinson	GHSR	1
+parkinson	MLNR	1
+parkinson	OPRL1	1
+parkinson	PDE1C	1

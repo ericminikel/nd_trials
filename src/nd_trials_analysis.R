@@ -1561,7 +1561,7 @@ write(paste('Genetically supported vs. unsupported novel hypotheses: N trials = 
 
 tirc1 %>% 
   filter(classification=='novel, unsup') %>% 
-  group_by(target_gene) %>% 
+  group_by(disease_area, target_gene) %>% 
   summarize(.groups='keep', n=n()) %>% 
   arrange(desc(n)) -> unsup_count
 
@@ -1574,10 +1574,10 @@ tirc1 %>%
   select(drug) %>% pull() %>% unique() %>% length() -> unique_notarget_unsup_drugs
 
 
-write(paste('Novel unsupported targets: ',unsup_count$n[is.na(unsup_count$target_gene)],'/',sum(unsup_count$n),
-            ' (',percent(unsup_count$n[is.na(unsup_count$target_gene)]/sum(unsup_count$n)),')',
-            ' no target assigned (',unique_notarget_unsup_drugs,' unique drugs); ',unsup_count$n[unsup_count$target_gene %in% 'MAPT'],'  MAPT; ',
-            unsup_count$n[unsup_count$target_gene %in% 'BACE1'],'  BACE1','\n',sep=''),text_stats_path,append=T)
+write(paste('Novel unsupported targets: ',sum(unsup_count$n[is.na(unsup_count$target_gene)]),'/',sum(unsup_count$n),
+            ' (',percent(sum(unsup_count$n[is.na(unsup_count$target_gene)])/sum(unsup_count$n)),')',
+            ' no target assigned (',unique_notarget_unsup_drugs,' unique drugs); ',unsup_count$n[unsup_count$disease_area=='alzheimer' & unsup_count$target_gene %in% 'MAPT'],'  MAPT; ',
+            unsup_count$n[unsup_count$disease_area=='alzheimer' & unsup_count$target_gene %in% 'BACE1'],'  BACE1','\n',sep=''),text_stats_path,append=T)
 
 
 
