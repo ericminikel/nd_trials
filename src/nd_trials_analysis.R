@@ -1566,7 +1566,7 @@ tirc1 %>%
   arrange(desc(n)) -> unsup_count
 
 
-write_tsv(unsup_count, 'qc/unsupported_targets_count.tsv')
+write_tsv(unsup_count, 'qc/unsupported_targets_count.tsv', na='')
 
 
 tirc1 %>%
