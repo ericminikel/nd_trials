@@ -1510,6 +1510,7 @@ write_tsv(tirc1, 'qc/drug_trial_classifications.tsv', na='')
 tirc1 %>%
   filter(classification=='post-approval') %>%
   inner_join(select(trials, nct, brief_title),by='nct') %>%
+  mutate(brief_title = gsub('"','',brief_title)) %>%
   select(nct, disease_area, year, drug, approval_year, brief_title) -> post_approval_qc
 write_tsv(post_approval_qc, 'qc/post_approval_trials.tsv')
 
