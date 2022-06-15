@@ -1520,7 +1520,7 @@ tirc1 %>%
   summarize(.groups='keep', n=n()) %>% 
   arrange(desc(n)) -> repurposing_count
 
-write_tsv(tirc1, 'qc/repurposing_trial_count.tsv')
+write_tsv(repurposing_count, 'qc/repurposing_trial_count.tsv', na='')
 
 tirc1 %>%
   group_by(priority, classification) %>%
