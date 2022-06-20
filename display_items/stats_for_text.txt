@@ -106,6 +106,9 @@ Top repurposed drug:  botulinum toxin a , N= 17
 
 Classifications with nominally significant growth in proportion over time:  repurposed targets : coef =  0.0034 , P= 0.024, novel other hypotheses : coef =  0.0064 , P= 0.0078 
 
+Regression stats for geneticaly supported:  novel genetically
+supported targrets : coef =  0.00089 , P= 0.59 
+
 Gene-disease links identified:  101 
 
 Novel supported hypotheses:  16 

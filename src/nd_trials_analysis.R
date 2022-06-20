@@ -1445,7 +1445,7 @@ png('display_items/figure-4.png',width=6.5*resx,height=7.5*resx,res=resx)
 
 
 layout_matrix = matrix(c(1,1,1,1,2,2,
-                         3,3,5,5,4,4,
+                         3,3,4,4,5,5,
                          6,6,6,7,7,7), nrow=3, byrow=T)
 layout(layout_matrix, heights=c(1.5,1,1.25), widths=c(1,1,1,1,1,1))
 
@@ -1736,6 +1736,40 @@ write(paste('Top repurposed drug: ',top_repur_drugs$drug[1],', N=',top_repur_dru
 
 
 
+
+assoc_meta = tibble(source=c('OMIM','GWAS'), color=c('#F3BE06','#3489CA'))
+expand.grid(year=2000:2020, source=c('OMIM','GWAS')) -> assoc_years
+targets %>% 
+  mutate(source=ifelse(source=='OMIM','OMIM','GWAS')) %>%
+  inner_join(assoc_years, by=c('source')) %>%
+  filter(assoc_year < year) %>%
+  group_by(year, source) %>%
+  summarize(.groups='keep', n_pairs = n()) %>%
+  ungroup() %>%
+  arrange(year, desc(source)) %>%
+  group_by(year) %>%
+  mutate(cumn = cumsum(n_pairs)) %>%
+  inner_join(assoc_meta, by='source') -> assoc_by_year_upto
+
+par(mar=c(3,3,2,1))
+xlims = c(2000, 2020)
+ylims = c(0, ceiling(max(assoc_by_year_upto$cumn, na.rm=T)/10)*10)
+plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
+axis(side=1, at=seq(2000,2020,1), tck=-0.025, labels=NA)
+axis(side=1, at=seq(2000,2020,5), tck=-0.05)
+mtext(side=1, line=2, text='year', cex=0.8)
+axis(side=2, at=0:10*10, tck=-0.03, labels=NA)
+axis(side=2, at=0:2*50, tck=-0.06, labels=NA)
+axis(side=2, at=0:2*50, las=2, lwd=0, line=0, cex.axis=0.8)
+mtext(side=2, line=2.5, text='reported associations', cex=0.8)
+for (assoc_source in c('GWAS','OMIM')) {
+  subs = subset(assoc_by_year_upto, source==assoc_source)
+  polygon(x=c(subs$year, rev(subs$year)), y=c(rep(0,nrow(subs)), rev(subs$cumn)), col=subs$color, border=NA)
+}
+legend('topleft',rev(assoc_meta$source),col=rev(assoc_meta$color),pch=15,bty='n')
+mtext(LETTERS[panel], side=3, cex=1.5, adj = -0.1, line = 0.5); panel = panel + 1
+
+
 tirc1 %>%
   group_by(priority, classification, year) %>%
   summarize(.groups='keep', n_nct = n(), sumpy=sum(patient_years, na.rm=T)) %>%
@@ -1756,6 +1790,8 @@ for (r in 1:nrow(tirc_change)) {
 }
 signif_pos = tirc_change$pval < 0.05 & tirc_change$coefficient > 0
 write(paste('Classifications with nominally significant growth in proportion over time: ',paste(tirc_change$disp[signif_pos], ': coef = ', formatC(tirc_change$coefficient[signif_pos], format='g', digits=2), ', P=', formatC(tirc_change$pval[signif_pos], format='g', digits=2), collapse=', '),'\n'),text_stats_path,append=T)
+gensup_row = tirc_change$shortname=='novel, supported'
+write(paste('Regression stats for geneticaly supported: ',paste(tirc_change$disp[gensup_row], ': coef = ', formatC(tirc_change$coefficient[gensup_row], format='g', digits=2), ', P=', formatC(tirc_change$pval[gensup_row], format='g', digits=2), collapse=', '),'\n'),text_stats_path,append=T)
 
 expand.grid(year=2000:2020, yorder=1:7) %>% 
   inner_join(tirc_meta, by=c('yorder')) %>%
@@ -1789,43 +1825,6 @@ for (yval in 7:1) {
   polygon(x=c(subs$year, rev(subs$year)), y=c(rep(0,nrow(subs)), rev(subs$cumn)), col=subs$color, border=NA)
 }
 mtext(LETTERS[panel], side=3, cex=1.5, adj = -0.1, line = 0.5); panel = panel + 1
-
-assoc_meta = tibble(source=c('OMIM','GWAS'), color=c('#F3BE06','#3489CA'))
-expand.grid(year=2000:2020, source=c('OMIM','GWAS')) -> assoc_years
-targets %>% 
-  mutate(source=ifelse(source=='OMIM','OMIM','GWAS')) %>%
-  inner_join(assoc_years, by=c('source')) %>%
-  filter(assoc_year < year) %>%
-  group_by(year, source) %>%
-  summarize(.groups='keep', n_pairs = n()) %>%
-  ungroup() %>%
-  arrange(year, desc(source)) %>%
-  group_by(year) %>%
-  mutate(cumn = cumsum(n_pairs)) %>%
-  inner_join(assoc_meta, by='source') -> assoc_by_year_upto
-
-
-
-
-par(mar=c(3,3,2,1))
-xlims = c(2000, 2020)
-ylims = c(0, ceiling(max(assoc_by_year_upto$cumn, na.rm=T)/10)*10)
-plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
-axis(side=1, at=seq(2000,2020,1), tck=-0.025, labels=NA)
-axis(side=1, at=seq(2000,2020,5), tck=-0.05)
-mtext(side=1, line=2, text='year', cex=0.8)
-axis(side=2, at=0:10*10, tck=-0.03, labels=NA)
-axis(side=2, at=0:2*50, tck=-0.06, labels=NA)
-axis(side=2, at=0:2*50, las=2, lwd=0, line=0, cex.axis=0.8)
-mtext(side=2, line=2.5, text='reported associations', cex=0.8)
-for (assoc_source in c('GWAS','OMIM')) {
-  subs = subset(assoc_by_year_upto, source==assoc_source)
-  polygon(x=c(subs$year, rev(subs$year)), y=c(rep(0,nrow(subs)), rev(subs$cumn)), col=subs$color, border=NA)
-}
-legend('topleft',rev(assoc_meta$source),col=rev(assoc_meta$color),pch=15,bty='n')
-mtext(LETTERS[panel], side=3, cex=1.5, adj = -0.1, line = 0.5); panel = panel + 1
-
-
 
 
 
