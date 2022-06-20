@@ -1445,9 +1445,9 @@ png('display_items/figure-4.png',width=6.5*resx,height=7.5*resx,res=resx)
 
 
 layout_matrix = matrix(c(1,1,1,1,2,2,
-                         3,3,4,4,4,7,
-                         5,5,6,6,6,7), nrow=3, byrow=T)
-layout(layout_matrix, heights=c(1.5,1,1), widths=c(1,1,1,1,.8,1.5))
+                         3,3,5,5,4,4,
+                         6,6,6,7,7,7), nrow=3, byrow=T)
+layout(layout_matrix, heights=c(1.5,1,1.25), widths=c(1,1,1,1,1,1))
 
 panel = 1
 
@@ -1744,9 +1744,6 @@ tirc1 %>%
   mutate(proportion_nct = n_nct/sum(n_nct),
          proportion_py = sumpy/sum(sumpy, na.rm=T)) -> tirc_by_year
 
-m = lm(proportion_nct ~ classification * year, data=tirc_by_year)
-summary(m)
-
 tirc_meta %>%
   select(priority, shortname, disp) %>%
   mutate(coefficient=as.numeric(NA),
@@ -1776,7 +1773,7 @@ tirc_years %>%
 classification_by_year_upto$n[classification_by_year_upto$year==2020]    = classification_by_year_upto$n[classification_by_year_upto$year==2020] * scale_2020
 classification_by_year_upto$cumn[classification_by_year_upto$year==2020] = classification_by_year_upto$cumn[classification_by_year_upto$year==2020] * scale_2020
 
-par(mar=c(4,4,3,1))
+par(mar=c(3,3,2,1))
 xlims = c(2000, 2020)
 ylims = c(0, ceiling(max(classification_by_year_upto$cumn, na.rm=T)/10)*10)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
@@ -1793,6 +1790,7 @@ for (yval in 7:1) {
 }
 mtext(LETTERS[panel], side=3, cex=1.5, adj = -0.1, line = 0.5); panel = panel + 1
 
+assoc_meta = tibble(source=c('OMIM','GWAS'), color=c('#F3BE06','#3489CA'))
 expand.grid(year=2000:2020, source=c('OMIM','GWAS')) -> assoc_years
 targets %>% 
   mutate(source=ifelse(source=='OMIM','OMIM','GWAS')) %>%
@@ -1806,10 +1804,10 @@ targets %>%
   mutate(cumn = cumsum(n_pairs)) %>%
   inner_join(assoc_meta, by='source') -> assoc_by_year_upto
 
-assoc_meta = tibble(source=c('OMIM','GWAS'), color=c('#F3BE06','#3489CA'))
 
 
-par(mar=c(4,4,3,1))
+
+par(mar=c(3,3,2,1))
 xlims = c(2000, 2020)
 ylims = c(0, ceiling(max(assoc_by_year_upto$cumn, na.rm=T)/10)*10)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
@@ -1886,7 +1884,7 @@ write(paste('Prospective trials based on genetics: mean ',round(mean(prospective
 t_adv$pos = 4
 t_adv$pos[t_adv$target_gene %in% c('PSEN1','BST1','GCH1','APOE')] = 3
 t_adv$pos[t_adv$target_gene %in% c('C9orf72','LRRK2')] = 1
-t_adv$pos[t_adv$target_gene %in% c('APH1B','GBA')] = 2
+t_adv$pos[t_adv$target_gene %in% c('APH1B','GBA','SNCA')] = 2
 par(mar=c(3,5,2,4))
 lims = c(1990, 2020)
 plot(NA, NA, xlim=lims, ylim=lims, axes=F, ann=F, xaxs='i', yaxs='i')
@@ -1900,7 +1898,7 @@ axis(side=2, at=seq(1990,2020,10), lwd=0, line=-0.25, las=2)
 mtext(side=2, line=2.5, text='first trial', cex=0.8)
 points(t_adv$assoc_year, t_adv$fih_year, pch=19, col=t_adv$color)
 par(xpd=T)
-text(x=t_adv$assoc_year, y=t_adv$fih_year, pos=t_adv$pos, font=3, labels=t_adv$target_gene, col=t_adv$color)
+text(x=t_adv$assoc_year, y=t_adv$fih_year, pos=t_adv$pos, font=3, labels=t_adv$target_gene, col=t_adv$color, cex=0.8)
 par(xpd=F)
 abline(a=0, b=1, lwd=0.25)
 legend('bottomright', diseases$disp[1:4], col=diseases$color[1:4], text.col=diseases$color[1:4], pch=19, bty='n')
@@ -1929,7 +1927,7 @@ ylims = range(t_adv$y) + c(-0.5, 0.5)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=0:50*10, labels=NA, tck=-0.025)
 axis(side=1, at=0:10*50, labels=NA, tck=-0.05)
-axis(side=1, at=0:5*100, lwd=0, line=-0.25)
+axis(side=1, at=0:10*50, lwd=0, line=-0.25)
 mtext(side=1, line=2, text='N trials',cex=0.8)
 axis(side=2, at=ylims, labels=NA, lwd.ticks=0)
 mtext(side=2, line=0.25, at=t_adv$y, text=t_adv$target_gene, font=3, las=2, cex=0.6)
