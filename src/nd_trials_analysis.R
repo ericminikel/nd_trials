@@ -1223,10 +1223,14 @@ stage_years %>%
   filter(incl) %>%
   group_by(year, earliest, color) %>%
   summarize(.groups='keep',
-            n=n()) -> stage_by_year_upto
+            n=n()) %>%
+  ungroup() %>% 
+  group_by(year) %>%
+  mutate(cumn = cumsum(n)) -> stage_by_year_upto
 
 scale_2020 = 365.25/as.numeric(as.Date('2020-03-31') - as.Date('2020-01-01'))
 stage_by_year_upto$n[stage_by_year_upto$year==2020] = stage_by_year_upto$n[stage_by_year_upto$year==2020] * scale_2020
+stage_by_year_upto$cumn[stage_by_year_upto$year==2020] = stage_by_year_upto$cumn[stage_by_year_upto$year==2020] * scale_2020
 
 # ordinal logit for whether stage is changing by year
 trls %>%
@@ -1275,7 +1279,7 @@ write(paste0('Score/test: N=',count_by_score_test$n_trials[count_by_score_test$s
 
 par(mar=c(4,4,3,1))
 xlims = c(2000, 2020)
-ylims = c(0, ceiling(max(stage_by_year_upto$n, na.rm=T)/10)*10)
+ylims = c(0, ceiling(max(stage_by_year_upto$cumn, na.rm=T)/10)*10)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=seq(2000,2020,1), tck=-0.025, labels=NA)
 axis(side=1, at=seq(2000,2020,5), tck=-0.05)
@@ -1286,7 +1290,7 @@ axis(side=2, at=0:5*100, las=2, lwd=0, line=0, cex.axis=0.8)
 mtext(side=2, line=2.5, text='trials/year', cex=0.8)
 for (s in 4:0) {
   subs = subset(stage_by_year_upto, earliest==s)
-  polygon(x=c(subs$year, rev(subs$year)), y=c(rep(0,nrow(subs)), rev(subs$n)), col=subs$color, border=NA)
+  polygon(x=c(subs$year, rev(subs$year)), y=c(rep(0,nrow(subs)), rev(subs$cumn)), col=subs$color, border=NA)
 }
 mtext(LETTERS[panel], side=3, cex=1.5, adj = -0.1, line = 0.5); panel = panel + 1
 
@@ -1437,12 +1441,13 @@ write(paste0('Enrichment for supported targets: OR=',round(fisher_developed_supp
              ' P=',formatC(fisher_developed_supported$p.value,format='f',digits=2),'\n'),text_stats_path,append=T)
 
 
-png('display_items/figure-4.png',width=6.5*resx,height=6.5*resx,res=resx)
+png('display_items/figure-4.png',width=6.5*resx,height=7.5*resx,res=resx)
 
 
 layout_matrix = matrix(c(1,1,1,1,2,2,
-                         3,3,4,4,4,5), nrow=2, byrow=T)
-layout(layout_matrix, heights=c(1,1), widths=c(1,1,1,1,.8,1.5))
+                         3,3,4,4,4,7,
+                         5,5,6,6,6,7), nrow=3, byrow=T)
+layout(layout_matrix, heights=c(1.5,1,1), widths=c(1,1,1,1,.8,1.5))
 
 panel = 1
 
@@ -1728,6 +1733,104 @@ write(paste('Top repurposed drug: ',top_repur_drugs$drug[1],', N=',top_repur_dru
             '\n'),text_stats_path,append=T)
 
 
+
+
+
+tirc1 %>%
+  group_by(priority, classification, year) %>%
+  summarize(.groups='keep', n_nct = n(), sumpy=sum(patient_years, na.rm=T)) %>%
+  ungroup() %>%
+  group_by(year) %>%
+  mutate(proportion_nct = n_nct/sum(n_nct),
+         proportion_py = sumpy/sum(sumpy, na.rm=T)) -> tirc_by_year
+
+m = lm(proportion_nct ~ classification * year, data=tirc_by_year)
+summary(m)
+
+tirc_meta %>%
+  select(priority, shortname, disp) %>%
+  mutate(coefficient=as.numeric(NA),
+         pval = as.numeric(NA)) -> tirc_change
+for (r in 1:nrow(tirc_change)) {
+  subs = subset(tirc_by_year, priority == tirc_change$priority[r])
+  m = lm(proportion_nct ~ year, data=subs)
+  tirc_change$coefficient[r] = summary(m)$coefficients['year','Estimate']
+  tirc_change$pval[r] = summary(m)$coefficients['year','Pr(>|t|)']
+}
+signif_pos = tirc_change$pval < 0.05 & tirc_change$coefficient > 0
+write(paste('Classifications with nominally significant growth in proportion over time: ',paste(tirc_change$disp[signif_pos], ': coef = ', formatC(tirc_change$coefficient[signif_pos], format='g', digits=2), ', P=', formatC(tirc_change$pval[signif_pos], format='g', digits=2), collapse=', '),'\n'),text_stats_path,append=T)
+
+expand.grid(year=2000:2020, yorder=1:7) %>% 
+  inner_join(tirc_meta, by=c('yorder')) %>%
+  as_tibble() -> tirc_years
+
+tirc_years %>%
+  left_join(tirc1, by=c('year','priority')) %>%
+  group_by(year, yorder, color) %>%
+  summarize(.groups='keep',
+            n=n()) %>%
+  ungroup() %>% 
+  group_by(year) %>%
+  mutate(cumn = cumsum(n)) -> classification_by_year_upto
+
+classification_by_year_upto$n[classification_by_year_upto$year==2020]    = classification_by_year_upto$n[classification_by_year_upto$year==2020] * scale_2020
+classification_by_year_upto$cumn[classification_by_year_upto$year==2020] = classification_by_year_upto$cumn[classification_by_year_upto$year==2020] * scale_2020
+
+par(mar=c(4,4,3,1))
+xlims = c(2000, 2020)
+ylims = c(0, ceiling(max(classification_by_year_upto$cumn, na.rm=T)/10)*10)
+plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
+axis(side=1, at=seq(2000,2020,1), tck=-0.025, labels=NA)
+axis(side=1, at=seq(2000,2020,5), tck=-0.05)
+mtext(side=1, line=2, text='year', cex=0.8)
+axis(side=2, at=0:10*50, tck=-0.03, labels=NA)
+axis(side=2, at=0:5*100, tck=-0.06, labels=NA)
+axis(side=2, at=0:5*100, las=2, lwd=0, line=0, cex.axis=0.8)
+mtext(side=2, line=2.5, text='trials/year', cex=0.8)
+for (yval in 7:1) {
+  subs = subset(classification_by_year_upto, yorder==yval)
+  polygon(x=c(subs$year, rev(subs$year)), y=c(rep(0,nrow(subs)), rev(subs$cumn)), col=subs$color, border=NA)
+}
+mtext(LETTERS[panel], side=3, cex=1.5, adj = -0.1, line = 0.5); panel = panel + 1
+
+expand.grid(year=2000:2020, source=c('OMIM','GWAS')) -> assoc_years
+targets %>% 
+  mutate(source=ifelse(source=='OMIM','OMIM','GWAS')) %>%
+  inner_join(assoc_years, by=c('source')) %>%
+  filter(assoc_year < year) %>%
+  group_by(year, source) %>%
+  summarize(.groups='keep', n_pairs = n()) %>%
+  ungroup() %>%
+  arrange(year, desc(source)) %>%
+  group_by(year) %>%
+  mutate(cumn = cumsum(n_pairs)) %>%
+  inner_join(assoc_meta, by='source') -> assoc_by_year_upto
+
+assoc_meta = tibble(source=c('OMIM','GWAS'), color=c('#F3BE06','#3489CA'))
+
+
+par(mar=c(4,4,3,1))
+xlims = c(2000, 2020)
+ylims = c(0, ceiling(max(assoc_by_year_upto$cumn, na.rm=T)/10)*10)
+plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
+axis(side=1, at=seq(2000,2020,1), tck=-0.025, labels=NA)
+axis(side=1, at=seq(2000,2020,5), tck=-0.05)
+mtext(side=1, line=2, text='year', cex=0.8)
+axis(side=2, at=0:10*10, tck=-0.03, labels=NA)
+axis(side=2, at=0:2*50, tck=-0.06, labels=NA)
+axis(side=2, at=0:2*50, las=2, lwd=0, line=0, cex.axis=0.8)
+mtext(side=2, line=2.5, text='reported associations', cex=0.8)
+for (assoc_source in c('GWAS','OMIM')) {
+  subs = subset(assoc_by_year_upto, source==assoc_source)
+  polygon(x=c(subs$year, rev(subs$year)), y=c(rep(0,nrow(subs)), rev(subs$cumn)), col=subs$color, border=NA)
+}
+legend('topleft',rev(assoc_meta$source),col=rev(assoc_meta$color),pch=15,bty='n')
+mtext(LETTERS[panel], side=3, cex=1.5, adj = -0.1, line = 0.5); panel = panel + 1
+
+
+
+
+
 ig_match %>%
   inner_join(tim, by=c('intervention_name','intervention_type')) %>%
   filter(intervention_class=='molecular') %>%
@@ -1857,6 +1960,5 @@ silence_message = dev.off()
 
 
 cat(file=stderr(), paste0('done!\nAll tasks completed in ',round(as.numeric(Sys.time() - start_time),1),' seconds.\n')); flush.console()
-
 
 
