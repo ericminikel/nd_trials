@@ -6,6 +6,7 @@ start_time = Sys.time()
 cat(file=stderr(), 'Loading dependencies...'); flush.console()
 
 suppressMessages(library(tidyverse))
+suppressMessages(library(janitor))
 suppressMessages(library(DiagrammeR))
 suppressMessages(library(DiagrammeRsvg))
 suppressMessages(library(magrittr))
@@ -222,8 +223,8 @@ trials %>%
                                           TRUE ~ dataset_inclusion), 
             exclude_comment,
             year,
-            disease_area = ifelse(disease_area %in% c('other','unspecified'), 'other/unspecified', disease_area),
             incl = dataset_inclusion=='i - include',
+            disease_area,
          phs = case_when(
            phase %in% c('1','1/2','Early 1') ~ 1,
            phase %in% c('2','2/3') ~ 2,
@@ -273,6 +274,34 @@ trls_all %>%
 write(paste('Trials considered: ',nrow(trls_all),'\n',sep=''),text_stats_path,append=T)
 write(paste('Trials curated: ',nrow(trls),'\n',sep=''),text_stats_path,append=T)
 
+
+dem_qc =suppressWarnings(read_tsv('bigdata/dementia_qc.tsv', col_types=cols())) %>% # just one trial has a format error on line 1487, ignore this warning
+  clean_names() %>%
+  mutate(start_date = parse_ct_dates(start_date)) %>%
+  filter(start_date > as.Date('2000-01-01') & start_date < as.Date('2020-04-01'))
+dem_tot = nrow(dem_qc)
+dem_in = sum(dem_qc$nct_number %in% trials$nct)
+dem_pct = percent(dem_in/dem_tot, digits=1)
+write(paste('Dementia search hits that are in our dataset: ',dem_in,'/',dem_tot,' (',dem_pct,')','\n',sep=''),text_stats_path,append=T)
+
+md_qc = read_tsv('bigdata/movement_disorder_qc.tsv', col_types=cols()) %>% 
+  clean_names() %>%
+  mutate(start_date = parse_ct_dates(start_date)) %>%
+  filter(start_date > as.Date('2000-01-01') & start_date < as.Date('2020-04-01'))
+md_tot = nrow(md_qc)
+md_in = sum(md_qc$nct_number %in% trials$nct)
+md_pct = percent(md_in/md_tot, digits=1)
+write(paste('Movement disorder search hits that are in our dataset: ',md_in,'/',md_tot,' (',md_pct,')','\n',sep=''),text_stats_path,append=T)
+
+mci_qc = read_tsv('bigdata/mci_qc.tsv', col_types=cols()) %>% 
+  clean_names() %>%
+  mutate(start_date = parse_ct_dates(start_date)) %>%
+  filter(start_date > as.Date('2000-01-01') & start_date < as.Date('2020-04-01'))
+mci_tot = nrow(mci_qc)
+mci_in = sum(mci_qc$nct_number %in% trials$nct)
+mci_pct = percent(mci_in/mci_tot, digits=1)
+write(paste('MCI search hits that are in our dataset: ',mci_in,'/',mci_tot,' (',mci_pct,')','\n',sep=''),text_stats_path,append=T)
+
 write(paste('All interventions: ',nrow(ivns),'\n',sep=''),text_stats_path,append=T)
 ivn_count = length(unique(tim$intervention_name[tim$nct %in% trls$nct[trls$dataset_inclusion=='i - include']]))
 write(paste('Interventions curated in included trials: ',ivn_count,'\n',sep=''),text_stats_path,append=T)
@@ -307,8 +336,8 @@ write(paste('Intervention target sources: ',paste(ivn_target_sources$text,collap
 
 cat(file=stderr(), 'done!\nLoading metadata..'); flush.console()
 
-diseases = tibble(disease_area=c('alzheimer','parkinson','ftd/als','huntington','other/unspecified'),
-                  disp = c('AD','PD','FTD/ALS','HD','other/NS'),
+diseases = tibble(disease_area=c('alzheimer','parkinson','ftd/als','huntington','multiple'),
+                  disp = c('AD','PD','FTD/ALS','HD','multiple'),
                   axis_order=1:5,
                   color=c('#880088','#FF6600','#008888','#66FF00','#A9A9A9'))
 
@@ -433,7 +462,7 @@ panel = 1
 
 trls %>%
   filter(incl) %>%
-  mutate(vrbl=case_when(is.na(disease_area) | disease_area %in% c('other','unspecified') ~ 'other/unspecified', TRUE ~ disease_area)) %>%
+  mutate(vrbl=disease_area) %>%
   group_by(vrbl) %>%
   summarize(.groups='keep',
             n_total = n(),
@@ -690,7 +719,8 @@ rbind(cbind(xtab_sector_iclass, xcat='sponsor', xcatorder=4),
   ungroup() %>% 
   group_by(xcat, xcatorder, x, vrbl1) %>% 
   arrange(xcatorder, x) %>% 
-  mutate(x_combined = cur_group_id()) -> xtab             
+  mutate(x_combined = cur_group_id()) %>%
+  mutate(py_per = replace_na(py_per, 0)) -> xtab             
 
 write(paste('Industry sponsored drug trials: N=',
             xtab$n_total[xtab$vrbl1=='industry' & xtab$vrbl2=='molecular'],
@@ -825,6 +855,7 @@ im_py = rev(sort(trls$py[(trls$industry & trls$iclass=='molecular') & !is.na(trl
 pie(c(im_py,ot_py), 
     col = alpha(c(rep(im_col,length(im_py)), rep(ot_col, length(ot_py))),c(.25,.5,.75)),
     labels=NA, border=NA)
+points(x=0,y=0,pch=19,cex=15,col='#FFFFFF')
 par(xpd=T)
 text(x=0,y=1,col=im_col,labels=paste0('industry drug trials'))
 text(x=0,y=-1,col=ot_col,labels=paste0('all other'))
@@ -1192,9 +1223,27 @@ s02_col = blend_hex(stages$color[1],stages$color[3],.5)
 s34_col = '#A9A9A9' #blend_hex(stages$color[4],stages$color[5],.5)
 de_smry$color = ifelse(de_smry$preventive, s02_col, s34_col)
 
-par(mar=c(2,4,2,6))
-xlims = c(0,durmax*1.05)
-ylims = c(0,enrmax*1.05)
+dur_breaks = c(seq(0,4.5,0.5),Inf)
+enr_breaks = c(seq(0,450,50),Inf)
+
+s02_dur_hist = hist(de_scatter$dur[de_scatter$preventive], breaks=dur_breaks, plot=F)
+s02_dur_hist$mids = seq(0.25,4.75,.5)
+s02_dur_hist$density[length(s02_dur_hist$density)] = s02_dur_hist$counts[length(s02_dur_hist$density)] / (0.5 * sum(s02_dur_hist$counts))
+s34_dur_hist = hist(de_scatter$dur[!de_scatter$preventive], breaks=dur_breaks, plot=F)
+s34_dur_hist$mids = seq(0.25,4.75,.5)
+s34_dur_hist$density[length(s34_dur_hist$density)] = s34_dur_hist$counts[length(s34_dur_hist$density)] / (0.5 * sum(s34_dur_hist$counts))
+s02_enr_hist = hist(de_scatter$enr[de_scatter$preventive], breaks=enr_breaks, plot=F)
+s02_enr_hist$mids = seq(25,475,50)
+s02_enr_hist$density[length(s02_enr_hist$density)] = s02_enr_hist$counts[length(s02_enr_hist$density)] / (50 * sum(s02_enr_hist$counts))
+s34_enr_hist = hist(de_scatter$enr[!de_scatter$preventive], breaks=enr_breaks, plot=F)
+s34_enr_hist$mids = seq(25,475,50)
+s34_enr_hist$density[length(s34_enr_hist$density)] = s34_enr_hist$counts[length(s34_enr_hist$density)] / (50 * sum(s34_enr_hist$counts))
+
+
+
+par(mar=c(2,4,3,5))
+xlims = c(0,durmax*1.0)
+ylims = c(0,enrmax*1.0)
 plot(NA, NA, xlim=xlims, ylim=ylims, axes=F, ann=F, xaxs='i', yaxs='i')
 axis(side=1, at=0:10, labels=NA, tck=-0.03)
 axis(side=1, at=c(0,2.5,5), labels=NA, tck=-0.06)
@@ -1209,9 +1258,34 @@ points(de_scatter$dur[ de_scatter$preventive], de_scatter$enr[ de_scatter$preven
 segments(x0=de_smry$dur_l95, x1=de_smry$dur_u95, y0=de_smry$enr_mean, lwd=3, col=de_smry$color)
 segments(x0=de_smry$dur_mean, y0=de_smry$enr_l95, y1=de_smry$enr_u95, lwd=3, col=de_smry$color)
 par(xpd=T)
-legend(x=max(xlims), y=max(ylims), legend=c('stages 0-2', 'stages 3-4'), pch=20, col=c(s02_col,s34_col), text.col=c(s02_col,s34_col), bty='n')
+legend(x=max(xlims), y=max(ylims)+300, legend=c('stages 0-2', 'stages 3-4'), pch=20, col=c(s02_col,s34_col), text.col=c(s02_col,s34_col), bty='n', cex=0.8)
 par(xpd=F)
 mtext(LETTERS[panel], side=3, cex=1.5, adj = -0.1, line = 0.5); panel = panel + 1
+
+rightset = 1.05
+s02_offset= -10
+s34_offset= 10
+barwidth = 20
+heights = c(s02_enr_hist$density, s34_enr_hist$density)*100
+hcolors = c(rep(s02_col, length(s02_enr_hist$density)), rep(s34_col, length(s34_enr_hist$density)))
+ymids = c(s02_enr_hist$mids + s02_offset, s34_enr_hist$mids + s34_offset)
+par(xpd=T)
+segments(x0=max(xlims)*rightset, y0=min(ylims), y1=max(ylims), lwd=.25)
+rect(xleft=rep(max(xlims)*rightset,length(heights)), xright=max(xlims)*rightset+heights, ybottom=ymids-barwidth/2, ytop=ymids+barwidth/2, col=hcolors, border=NA)
+par(xpd=F)
+
+
+rightset = 1.05
+s02_offset= -0.1
+s34_offset= 0.1
+barwidth = 0.2
+heights = c(s02_dur_hist$density, s34_dur_hist$density)*300
+hcolors = c(rep(s02_col, length(s02_dur_hist$density)), rep(s34_col, length(s34_dur_hist$density)))
+xmids = c(s02_dur_hist$mids + s02_offset, s34_dur_hist$mids + s34_offset)
+par(xpd=T)
+segments(y0=max(ylims)*rightset, x0=min(xlims), x1=max(xlims), lwd=.25)
+rect(ybottom=max(ylims)*rightset, ytop=max(ylims)*rightset+heights, xleft=xmids-barwidth/2, xright=xmids+barwidth/2, col=hcolors, border=NA)
+par(xpd=F)
 
 
 expand.grid(year=2000:2020, earliest=0:4) %>% 
@@ -1791,7 +1865,7 @@ for (r in 1:nrow(tirc_change)) {
 signif_pos = tirc_change$pval < 0.05 & tirc_change$coefficient > 0
 write(paste('Classifications with nominally significant growth in proportion over time: ',paste(tirc_change$disp[signif_pos], ': coef = ', formatC(tirc_change$coefficient[signif_pos], format='g', digits=2), ', P=', formatC(tirc_change$pval[signif_pos], format='g', digits=2), collapse=', '),'\n'),text_stats_path,append=T)
 gensup_row = tirc_change$shortname=='novel, supported'
-write(paste('Regression stats for geneticaly supported: ',paste(tirc_change$disp[gensup_row], ': coef = ', formatC(tirc_change$coefficient[gensup_row], format='g', digits=2), ', P=', formatC(tirc_change$pval[gensup_row], format='g', digits=2), collapse=', '),'\n'),text_stats_path,append=T)
+write(paste('Regression stats for geneticaly supported: ',paste(gsub('\n',' ',tirc_change$disp[gensup_row]), ': coef = ', formatC(tirc_change$coefficient[gensup_row], format='g', digits=2), ', P=', formatC(tirc_change$pval[gensup_row], format='g', digits=2), collapse=', '),'\n'),text_stats_path,append=T)
 
 expand.grid(year=2000:2020, yorder=1:7) %>% 
   inner_join(tirc_meta, by=c('yorder')) %>%
@@ -1957,5 +2031,8 @@ silence_message = dev.off()
 
 
 cat(file=stderr(), paste0('done!\nAll tasks completed in ',round(as.numeric(Sys.time() - start_time),1),' seconds.\n')); flush.console()
+
+
+
 
 

@@ -1,24 +1,30 @@
-Last updated: 2022-06-20
+Last updated: 2022-09-22
 
 Inclusion/exclusion criteria count curated: 75
 
 Trials considered: 4542
 
-Trials curated: 3241
+Trials curated: 3238
+
+Dementia search hits that are in our dataset: 2041/4010 (51%)
+
+Movement disorder search hits that are in our dataset: 1994/3545 (56%)
+
+MCI search hits that are in our dataset: 302/853 (35%)
 
 All interventions: 5297
 
-Interventions curated in included trials: 3630
+Interventions curated in included trials: 3623
 
 Interventions: 85% had just 1 trial, rest had (mean±sd)  5±32.9 trials.
 
 Intervention target sources: DB: 993; Pubmed: 278; Alzforum: 244; press release: 46; CT: 19; other: 18
 
-Industry sponsored: N=1240 (38%), proportion PY=64%
+Industry sponsored: N=1239 (38%), proportion PY=64%
 
-Drug trials: N=1865 (58%), proportion PY=76%
+Drug trials: N=1864 (58%), proportion PY=76%
 
-Industry sponsored drug trials: N=1107 (34%), proportion PY=61%
+Industry sponsored drug trials: N=1106 (34%), proportion PY=61%
 
 Top 1 trial PY: industry-drug: 3.8% non:13%
 
@@ -26,29 +32,29 @@ Top 33% of trials: industry-drug: 25 trials; non: 6 trials.
 
 ≤20 PY trials: industry-drug: 15%; non: 34%.
 
-Industry-drug vs. other - placebo OR: 3.1, P = 1e-50.
+Industry-drug vs. other - placebo OR: 3.1, P = 2e-50.
 
-Industry-drug vs. other - completed OR: 2.2, P = 6e-25.
+Industry-drug vs. other - completed OR: 2.2, P = 8e-25.
 
-Industry-drug vs. other - specified phase OR: 136.7, P = 1e-272.
+Industry-drug vs. other - specified phase OR: 136.9, P = 1e-272.
 
-Inclusion/exclusion criteria time trend -- Industry-drug: mean rose from 9.2 to 17.2, P = 2.6e-10.
+Inclusion/exclusion criteria time trend -- Industry-drug: mean rose from 9.2 to 17.2, P = 2.8e-10.
 
-Inclusion/exclusion criteria time trend -- All other: mean rose from 13.3 to 13.4, P = 0.31.
+Inclusion/exclusion criteria time trend -- All other: mean rose from 13.3 to 13.4, P = 0.3.
 
 Inclusion/exclusion criteria time trend -- phase i: mean rose from 9.2 to 14.8, P = 0.022.
 
-Inclusion/exclusion criteria time trend -- phase ii: mean rose from 13.8 to 19.0, P = 5.6e-06.
+Inclusion/exclusion criteria time trend -- phase ii: mean rose from 13.8 to 19.0, P = 5.1e-06.
 
-Inclusion/exclusion criteria time trend -- phase iii: mean rose from 9.4 to 18.3, P = 3.6e-09.
+Inclusion/exclusion criteria time trend -- phase iii: mean rose from 9.4 to 18.3, P = 4.3e-09.
 
 Inclusion/exclusion criteria time trend -- phase o: mean rose from 12.8 to 12.4, P = 0.79.
 
-Disease stages: stage 0 N = 80 (2.5%); stage 1 N = 5 (0.15%); stage 2 N = 4 (0.12%); stage 3 N = 253 (7.8%); stage 4 N = 2899 (89%)
-Preventive trial differences: industry-sponsored OR=0.32 P=0.000012; drug OR=0.59 P=0.017; behavioral OR=3.1 P=0.00000038; device OR=0.26 P=0.0024; procedure OR=0.61 P=0.77; specified phase OR=0.67 P=0.066; completed OR=0.82 P=0.39; placebo-controlled OR=0.98 P=  1
-Preventive trials duration: 3.39 vs. 2.66 years, P = 0.00039, N = 87 vs 3025
+Disease stages: stage 0 N = 80 (2.5%); stage 1 N = 5 (0.15%); stage 2 N = 4 (0.12%); stage 3 N = 253 (7.8%); stage 4 N = 2896 (89%)
+Preventive trial differences: industry-sponsored OR=0.32 P=0.000012; drug OR=0.59 P=0.017; behavioral OR=3.1 P=0.00000038; device OR=0.26 P=0.0024; procedure OR=0.61 P=0.77; specified phase OR=0.67 P=0.066; completed OR=0.82 P=0.39; placebo-controlled OR=1.02 P=0.91
+Preventive trials duration: 3.39 vs. 2.66 years, P = 0.00038, N = 87 vs 3022
 
-Preventive trials duration:  226 vs.  171 years, P = 0.086, N = 48 vs 1905
+Preventive trials duration:  226 vs.  171 years, P = 0.088, N = 48 vs 1902
 
 Ordinal logit model: [disease] stage ~ year: P = 2e-15
 
@@ -68,9 +74,9 @@ Enrichment for approved targets: OR=153.7 P=0.00
 
 Enrichment for supported targets: OR=13.4 P=0.00
 
-Drug trials: N=1865
+Drug trials: N=1864
 
-Unique molecular entities: N=750
+Unique molecular entities: N=748
 
 Pre-approval and post-approval: total proportion PY = 18%
 
@@ -80,15 +86,15 @@ Post-approval: proportion PY = 13%
 
 Pre-approval vs. post-approval: N trials = 56 vs 263 (ratio: 4.7) PY = 32,899 vs 95,164 (ratio: 2.9
 
-Donepezil N trials = 56
+Donepezil N trials = 55
 
 Novel hypotheses: total proportion PY = 48%
 
-Novel hypotheses: fraction lacking genetic support = 432/577
+Novel hypotheses: fraction lacking genetic support = 429/577
 
-Genetically supported vs. unsupported novel hypotheses: N trials = 145 vs 432 (ratio: 3) PY = 119,102 vs 232,382 (ratio: 2
+Genetically supported vs. unsupported novel hypotheses: N trials = 148 vs 429 (ratio: 2.9) PY = 119,316 vs 232,167 (ratio: 1.9
 
-Novel unsupported targets: 307/432 (71%) no target assigned (184 unique drugs); 23  MAPT; 23  BACE1
+Novel unsupported targets: 307/429 (72%) no target assigned (184 unique drugs); 23  MAPT; 23  BACE1
 
 Repurposing categories:  34% 
 
@@ -96,18 +102,17 @@ Targets tested:  344
 
 Repurposed targets:  272 
 
-Pivots from one neurodegenerative disease to another:  56 
+Pivots from one neurodegenerative disease to another:  55 
 
-Other repurposing sources: neurology N= 194  metabolic N= 72  cardiovascular N= 46 
+Other repurposing sources: neurology N= 195  metabolic N= 72  cardiovascular N= 47 
 
 All non-ND repurposing sources: N= 557 
 
 Top repurposed drug:  botulinum toxin a , N= 17 
 
-Classifications with nominally significant growth in proportion over time:  repurposed targets : coef =  0.0034 , P= 0.024, novel other hypotheses : coef =  0.0064 , P= 0.0078 
+Classifications with nominally significant growth in proportion over time:  repurposed targets : coef =  0.0034 , P= 0.024, novel other hypotheses : coef =  0.0063 , P= 0.0092 
 
-Regression stats for geneticaly supported:  novel genetically
-supported targrets : coef =  0.00089 , P= 0.59 
+Regression stats for geneticaly supported:  novel genetically supported targrets : coef =  0.00095 , P= 0.59 
 
 Gene-disease links identified:  101 
 
@@ -115,7 +120,7 @@ Novel supported hypotheses:  16
 
 Prospective trials based on genetics: mean  13  years, min  5 
 
-APP: 69% of trials, 84% of PY
+APP: 68% of trials, 84% of PY
 
 Top 2 trials:  NCT00010803 ginkgo biloba, NCT00276510 ginkgo biloba  total  55278.7542778919  PY. 
 

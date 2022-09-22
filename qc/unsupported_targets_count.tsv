@@ -1,18 +1,16 @@
 disease_area	target_gene	n
-alzheimer		152
+alzheimer		153
 parkinson		84
-ftd/als		57
+ftd/als		59
 alzheimer	BACE1	23
 alzheimer	MAPT	23
 huntington		9
 alzheimer	AGER	5
 alzheimer	PDE9A	5
-other/unspecified		5
 parkinson	GDNF	4
 parkinson	GRM4	4
 alzheimer	TERT	3
 huntington	SIRT1	3
-other/unspecified	MAPT	3
 parkinson	NRTN	3
 alzheimer	CAPN1	2
 alzheimer	FLNA	2
@@ -21,6 +19,7 @@ alzheimer	GSK3B	2
 alzheimer	NGF	2
 alzheimer	NGFR	2
 ftd/als	RTN4	2
+multiple		2
 parkinson	GAD1	2
 parkinson	MPO	2
 parkinson	PDGFB	2
@@ -41,12 +40,12 @@ ftd/als	HGF	1
 ftd/als	IGF1	1
 ftd/als	MAP3K12	1
 ftd/als	RIPK1	1
+ftd/als	SORT1	1
 ftd/als	TNNT3	1
 huntington	AHR	1
 huntington	MAPK14	1
 huntington	SEMA4D	1
-other/unspecified	PSEN1	1
-other/unspecified	SORT1	1
+multiple	MAPT	1
 parkinson	ALOX15	1
 parkinson	FYN	1
 parkinson	GHSR	1

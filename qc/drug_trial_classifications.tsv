@@ -26,14 +26,14 @@ parkinson	NCT00040209	2002	jp 1730	fipamezole	experimental				ADRA2A	approved	me
 parkinson	NCT00040404	2002	cep-1347 10mg	cep-1347	experimental		2756.1779603011637			non	novel, unsup	2
 alzheimer	NCT00040443	2002	cx516	cx516	experimental		379.46611909650926			non	novel, unsup	2
 alzheimer	NCT00041678	2000	aripiprazole	aripiprazole	approved				DRD2	approved	repurposing	3
-other/unspecified	NCT00042172	2002	donepezil	donepezil	approved				ACHE	approved	repurposing	3
-other/unspecified	NCT00043849	2002	quetiapine	quetiapine	approved				HTR2A	approved	repurposing	3
+alzheimer	NCT00042172	2002	ginkgo biloba extract	ginkgo biloba	approved					non	repurposing	3
+multiple	NCT00043849	2002	quetiapine	quetiapine	approved				HTR2A	approved	repurposing	3
 ftd/als	NCT00047723	2003	minocycline	minocycline	approved					non	repurposing	3
 alzheimer	NCT00051909	2002	ly451395	mibampator	experimental				GRIA1	approved	metoo	5
 alzheimer	NCT00053599	2002	simvastatin	simvastatin	approved				HMGCR	approved	repurposing	3
 alzheimer	NCT00056225	2003	folate	folic acid	supplement		1500.561259411362			non	novel, unsup	2
 alzheimer	NCT00056329	2002	multivitamin	multivitamin	supplement		3529.226557152635			non	novel, unsup	2
-other/unspecified	NCT00056524	2003	avp-923	dextromethorphan,quinidine	combination				SIGMAR1	approved	combination	4
+ftd/als	NCT00056524	2003	avp-923	dextromethorphan,quinidine	combination				SIGMAR1	approved	combination	4
 parkinson	NCT00058838	2003	sumanirole	sumanirole	approved					non	repurposing	3
 parkinson	NCT00062738	2003	nortriptyline	nortriptyline	approved		290.5735797399042		SLC6A2	approved	repurposing	3
 parkinson	NCT00063193	2003	minocycline	minocycline	approved					non	repurposing	3
@@ -252,7 +252,7 @@ alzheimer	NCT00314912	2006	tramiprosate (3aps)	acamprosate	approved				GRM5	appr
 parkinson	NCT00321854	2006	pramipexole	pramipexole	approved	1997			DRD3	approved	post-approval	7
 alzheimer	NCT00322036	2006	mpc-7869	flurizan	experimental		2069.8151950718684	OMIM	PSEN1	non	novel, supported	1
 alzheimer	NCT00322153	2005	memantine er	memantine	approved	2003	1749.7275838466803		GRIN1	approved	post-approval	7
-other/unspecified	NCT00324454	2006	levetiracetam	levetiracetam	approved		41.724845995893226		SV2A	approved	repurposing	3
+ftd/als	NCT00324454	2006	levetiracetam	levetiracetam	approved		41.724845995893226		SV2A	approved	repurposing	3
 parkinson	NCT00324896	2006	eszopiclone	eszopiclone	approved		92.56673511293634		GABRA1	approved	repurposing	3
 alzheimer	NCT00325728	2006	ramelteon	ramelteon	approved		104.74469541409994		MTNR1A	approved	repurposing	3
 ftd/als	NCT00326625	2006	40 mg glatiramer acetate	glatiramer	approved		732.5010266940452			non	repurposing	3
@@ -406,7 +406,7 @@ alzheimer	NCT00539305	2009	testosterone gel	testosterone	approved		62.3408624229
 ftd/als	NCT00542412	2001	riluzole	riluzole	approved	1995	1620.8624229979466		SCN5A	approved	post-approval	7
 alzheimer	NCT00544791	2007	melatonin	melatonin	supplement				MTNR1A	approved	metoo	5
 ftd/als	NCT00545974	2007	memantine	memantine	approved		418.69404517453796		GRIN1	approved	repurposing	3
-other/unspecified	NCT00547911	2007	carbidopa	carbidopa	approved		77.00479123887749		DDC	approved	repurposing	3
+parkinson	NCT00547911	2007	droxidopa	droxidopa	approved		77.00479123887749		ADRA1A	approved	repurposing	3
 alzheimer	NCT00548145	2007	pitavastatin	pitavastatin	approved		164.5886379192334		HMGCR	approved	repurposing	3
 alzheimer	NCT00549601	2007	rivastigmine capsules (6 mg to 12 mg/day)	rivastigmine	approved	2000	224.71184120465435		ACHE	approved	post-approval	7
 parkinson	NCT00550238	2007	pimavanserin tartrate (acp-103)	pimavanserin	approved		5009.100616016427		HTR2A	approved	repurposing	3
@@ -532,7 +532,7 @@ alzheimer	NCT00731224	2008	rivastigmine transdermal patch	rivastigmine	approved	
 alzheimer	NCT00733642	2008	pf-04360365 1 mg/kg	ponezumab	experimental		13.716632443531827	OMIM	APP	non	novel, supported	1
 alzheimer	NCT00733863	2008	cad106	cad106	experimental					non	novel, unsup	2
 alzheimer	NCT00736775	2008	anti-abeta	anti-abeta antibody	experimental			OMIM	APP	non	novel, supported	1
-other/unspecified	NCT00738062	2008	droxidopa	droxidopa	approved		300.3285420944558		ADRA1A	approved	repurposing	3
+parkinson	NCT00738062	2008	droxidopa	droxidopa	approved		300.3285420944558		ADRA1A	approved	repurposing	3
 alzheimer	NCT00739037	2008	paz-417	aleplasinin	experimental				SERPINE1	approved	metoo	5
 parkinson	NCT00740714	2008	coenzyme q10 with vitamin e	ubidecarenone	supplement		1598.3572895277207		NDUFV3	approved	metoo	5
 alzheimer	NCT00742417	2007	albutein 5%	albumin	approved		153.9712525667351			non	repurposing	3
@@ -620,7 +620,7 @@ alzheimer	NCT00904683	2009	ly2062430	solanezumab	experimental		3208.980150581793
 alzheimer	NCT00905372	2009	ly2062430	solanezumab	experimental			OMIM	APP	non	novel, supported	1
 parkinson	NCT00906763	2009	chocolate	chocolate	supplement					non	novel, unsup	2
 parkinson	NCT00906828	2008	levodopa/carbidopa	carbidopa,levodopa	combination				DRD1	approved	combination	4
-other/unspecified	NCT00907595	2009	ramelteon	ramelteon	approved		0		MTNR1A	approved	repurposing	3
+multiple	NCT00907595	2009	ramelteon	ramelteon	approved		0		MTNR1A	approved	repurposing	3
 parkinson	NCT00907972	2009	vitamin d3	vitamin d	supplement		76.69815195071868			non	novel, unsup	2
 parkinson	NCT00908076	2009	lubiprostone	lubiprostone	approved		129.62628336755648		CLCN2	approved	repurposing	3
 parkinson	NCT00909545	2009	isradipine cr 10mg	isradipine	approved		256.13963039014374		CACNA1C	approved	repurposing	3
@@ -717,7 +717,7 @@ parkinson	NCT01052831	2009	naltrexone	naltrexone	approved		154.1409993155373		OP
 alzheimer	NCT01054976	2006	galantamine	galantamine	approved	2001	231.47433264887064		ACHE	approved	post-approval	7
 parkinson	NCT01055379	2010	rasagiline	rasagiline	approved	2006			MAOB	approved	post-approval	7
 alzheimer	NCT01055392	2007	lithium carbonate	lithium	approved					non	repurposing	3
-other/unspecified	NCT01056965	2010	davunetide (al-108, nap)	davunetide	experimental		34.98973305954826		MAPT	non	novel, unsup	2
+ftd/als	NCT01056965	2010	davunetide (al-108, nap)	davunetide	experimental		34.98973305954826	OMIM	MAPT	non	novel, supported	1
 parkinson	NCT01058291	2010	kw-6500	apomorphine	approved	2004	23.170431211498972		DRD4	approved	post-approval	7
 alzheimer	NCT01058941	2010	lipoic acid and fish oil concentrate	lipoic acid	supplement		284.6926762491444			non	novel, unsup	2
 parkinson	NCT01060878	2010	pym50028	smilagenin	experimental		885.4893908281998			non	novel, unsup	2
@@ -936,7 +936,7 @@ alzheimer	NCT01560585	2012	isotretinoin	isotretinoin	approved					non	repurposin
 parkinson	NCT01560754	2012	nicotine transdermal patch	nicotine	approved				CHRNA4	approved	repurposing	3
 alzheimer	NCT01561430	2012	ly2886721	ly2886721	experimental		99.27446954141		BACE1	non	novel, unsup	2
 parkinson	NCT01563913	2012	docosahexaenoic acid (dha)	doconexent	approved		120.97741273100615		PPARA	approved	repurposing	3
-other/unspecified	NCT01565395	2012	incobotulinum toxin a	botulinum toxin a	approved		0		SNAP25	approved	repurposing	3
+multiple	NCT01565395	2012	incobotulinum toxin a	botulinum toxin a	approved		0		SNAP25	approved	repurposing	3
 parkinson	NCT01568034	2009	levodopa/benzerazide	levodopa,benserazide	combination		8.37782340862423		DRD1	approved	combination	4
 parkinson	NCT01568047	2010	levodopa/benzerazide	levodopa,benserazide	combination		13.141683778234086		DRD1	approved	combination	4
 parkinson	NCT01568073	2011	benserazide	benserazide	approved		1603.2854209445586		DDC	approved	repurposing	3
@@ -949,7 +949,7 @@ alzheimer	NCT01594346	2000	alpha-tocopherol	vitamin e	supplement		3343.329226557
 alzheimer	NCT01595646	2011	insulin	insulin	approved		124.29568788501027		INSR	approved	repurposing	3
 alzheimer	NCT01600469	2012	daoi-b	daoi	experimental		114.43121149897331			non	novel, unsup	2
 alzheimer	NCT01600859	2012	e2609	elenbecestat	experimental		81.32785763175907		BACE1	non	novel, unsup	2
-other/unspecified	NCT01602393	2012	chf 5074 1x	chf 5074	experimental		72.32854209445586		PSEN1	non	novel, unsup	2
+alzheimer	NCT01602393	2012	chf 5074 1x	chf 5074	experimental		72.32854209445586	OMIM	PSEN1	non	novel, supported	1
 parkinson	NCT01602549	2012	gsk962040 (25 mg tablet)	gsk962040	experimental		106.2340862422998		MLNR	non	novel, unsup	2
 parkinson	NCT01603069	2012	azd3241 300 mg bid	verdiperstat	experimental		33.93018480492813		MPO	non	novel, unsup	2
 alzheimer	NCT01608217	2012	acetaminophen	acetaminophen	approved		99.9315537303217			non	repurposing	3
@@ -1094,7 +1094,6 @@ alzheimer	NCT01940952	2013	zydena (udenafil) 100mg + donepezil 5mg or 10mg	udena
 parkinson	NCT01941732	2003	sildenafil	sildenafil	approved		2.650239561943874		PDE5A	approved	repurposing	3
 alzheimer	NCT01948791	2014	ena713	rivastigmine	approved	2000	240.6899383983573		ACHE	approved	post-approval	7
 alzheimer	NCT01951118	2013	donepezil	donepezil	approved	1996	675.1485284052019		ACHE	approved	post-approval	7
-other/unspecified	NCT01951924	2013	biological : i10e (human normal immunoglobulin for intravenous administration 100mg/ml)	human immunoglobulin g	approved		59.38124572210815			non	repurposing	3
 alzheimer	NCT01953601	2013	verubecestat 12 mg (parts 1 and 2)	verubecestat	experimental		6464.876112251883		BACE1	non	novel, unsup	2
 alzheimer	NCT01953705	2014	omega 3 pufa	DHA,EPA	approved		535.6221765913758		PPARA	approved	repurposing	3
 alzheimer	NCT01955161	2013	idalopirdine	idalopirdine	experimental		2564.6324435318274		HTR6	approved	metoo	5
@@ -1110,7 +1109,7 @@ parkinson	NCT01973543	2013	vy-aadc01	vy-aadc01	experimental		94.70225872689939		
 alzheimer	NCT01978548	2013	jnj-54861911 10 mg	atabecestat	experimental		59.87679671457906		BACE1	non	novel, unsup	2
 alzheimer	NCT01982578	2017	genistein	genistein	supplement					non	novel, unsup	2
 parkinson	NCT01993680	2012	fludrocortisone	fludrocortisone	approved				NR3C2	approved	repurposing	3
-other/unspecified	NCT01994109	2013	myobloc	botulinum toxin b	approved		592.3586584531143		VAMP1	approved	repurposing	3
+parkinson	NCT01994109	2013	myobloc	botulinum toxin b	approved		592.3586584531143		VAMP1	approved	repurposing	3
 alzheimer	NCT01998841	2013	crenezumab	crenezumab	experimental		2062.2258726899386	OMIM	APP	non	novel, supported	1
 ftd/als	NCT01999803	2014	snn0029	snn0029	experimental		16.2217659137577		VEGFA	approved	metoo	5
 alzheimer	NCT02002819	2014	levetiracetam	levetiracetam	approved				SV2A	approved	repurposing	3
@@ -1194,7 +1193,7 @@ parkinson	NCT02240030	2014	cvt-301 high dose	levodopa	approved	1975	731.31006160
 alzheimer	NCT02240693	2015	bi 409306	bi 409306	experimental		349.74401095140314		PDE9A	non	novel, unsup	2
 parkinson	NCT02242487	2015	cvt-301	levodopa	approved	1975	1029.5003422313484		DRD1	approved	post-approval	7
 alzheimer	NCT02244541	2014	anavex2-73 intravenous	anavex2-73	experimental		61.4154688569473		SIGMAR1	approved	metoo	5
-other/unspecified	NCT02245568	2014	trx0237	lmtm	experimental		2509.656399726215		MAPT	non	novel, unsup	2
+multiple	NCT02245568	2014	trx0237	lmtm	experimental		2509.656399726215		MAPT	non	novel, unsup	2
 alzheimer	NCT02245737	2014	lanabecestat	lanabecestat	experimental		8896.290212183436		BACE1	non	novel, unsup	2
 alzheimer	NCT02246075	2015	evp-6124	encenicline	experimental				CHRNA7	approved	metoo	5
 alzheimer	NCT02248636	2015	cholinesterase inhibitor	galantamine,donepezil,rivastigmine	combination		337.67556468172484		ACHE	approved	combination	4
@@ -1333,7 +1332,7 @@ alzheimer	NCT02593318	2015	oxaloacetate (oaa)	oxaloacetic acid	supplement		87.55
 parkinson	NCT02601586	2016	pr oxycodone	oxycodone	approved				OPRM1	approved	repurposing	3
 parkinson	NCT02605434	2016	accordion pill™ carbidopa/levodopa	carbidopa,levodopa	combination				DRD1	approved	combination	4
 parkinson	NCT02610231	2015	istradefylline 20 mg or 40 mg	istradefylline	approved	2019	490.75975359342914		ADORA2A	approved	pre-approval	6
-other/unspecified	NCT02610868	2015	myobloc	botulinum toxin b	approved		311.7946611909651		VAMP1	approved	repurposing	3
+parkinson	NCT02610868	2015	myobloc	botulinum toxin b	approved		311.7946611909651		VAMP1	approved	repurposing	3
 alzheimer	NCT02614131	2015	ly2599666	ly2599666	experimental		50.10266940451746	OMIM	APP	non	novel, supported	1
 alzheimer	NCT02615002	2015	piromelatine	piromelatine	experimental				MTNR1A	approved	metoo	5
 parkinson	NCT02615873	2016	accordion pill™ carbidopa/levodopa	carbidopa,levodopa	combination				DRD1	approved	combination	4
@@ -1414,20 +1413,20 @@ parkinson	NCT02847650	2016	pf-06649751	tavapadon	experimental		73.19096509240246
 ftd/als	NCT02851914	2015	selective serotonin uptake inhibitors (""ssri"")	ssri	approved		7.715263518138261		SLC6A4	approved	repurposing	3
 parkinson	NCT02857244	2016	donepezil	donepezil	approved		0		ACHE	approved	repurposing	3
 alzheimer	NCT02860065	2016	cpc-201	donepezil,solifenacin	combination		0		CHRM3	approved	combination	4
-other/unspecified	NCT02862210	2017	lithium carbonate	lithium	approved					non	repurposing	3
+ftd/als	NCT02862210	2017	lithium carbonate	lithium	approved					non	repurposing	3
 parkinson	NCT02864004	2017	apomorphine	apomorphine	approved	2004			DRD4	approved	post-approval	7
-other/unspecified	NCT02868567	2016	dalfampridine	dalfampridine	approved				KCNA1	approved	repurposing	3
+ftd/als	NCT02868567	2016	dalfampridine	dalfampridine	approved				KCNA1	approved	repurposing	3
 ftd/als	NCT02868580	2016	triumeq	dolutegravir	approved		93.12251882272416			non	repurposing	3
 ftd/als	NCT02870634	2016	cu(ii)atsm	Cu(II)atsm	experimental					non	novel, unsup	2
-other/unspecified	NCT02871427	2016	nelotanserin	nelotanserin	experimental				HTR2A	approved	metoo	5
+parkinson	NCT02871427	2016	nelotanserin	nelotanserin	experimental				HTR2A	approved	metoo	5
 ftd/als	NCT02872142	2016	albutein 5%	albumin	approved		35.05544147843943			non	repurposing	3
-other/unspecified	NCT02880033	2011	deferiprone	deferiprone	approved		817.0841889117044			non	repurposing	3
+multiple	NCT02880033	2011	deferiprone	deferiprone	approved		817.0841889117044			non	repurposing	3
 alzheimer	NCT02880956	2016	abbv-8e12	tilavonemab	experimental		2164.229979466119		MAPT	non	novel, unsup	2
 alzheimer	NCT02886494	2016	bac	bac	experimental		153.31964407939768			non	novel, unsup	2
 parkinson	NCT02897063	2016	droxidopa	droxidopa	approved				ADRA1A	approved	repurposing	3
 parkinson	NCT02906020	2016	gz/sar402671	venglustat	experimental		1655.1129363449693		UGCG	approved	metoo	5
 alzheimer	NCT02907567	2016	ct1812	elayta	experimental		18.986995208761122			non	novel, unsup	2
-other/unspecified	NCT02910102	2016	rvt-101 35 mg	intepirdine	experimental		41.19917864476386		HTR6	approved	metoo	5
+multiple	NCT02910102	2016	rvt-101 35 mg	intepirdine	experimental		41.19917864476386		HTR6	approved	metoo	5
 alzheimer	NCT02912936	2016	ketogenic medium chain triglyceride drink (mct drink)	mct oil	supplement					non	novel, unsup	2
 parkinson	NCT02914366	2015	ambroxol	ambroxol	approved					non	repurposing	3
 alzheimer	NCT02916056	2016	azeliragon 5mg	azeliragon	experimental		446.2861054072553		AGER	non	novel, unsup	2
@@ -1470,7 +1469,7 @@ parkinson	NCT03037203	2017	jzp-110	solriamfetol	approved		104.26283367556468			n
 alzheimer	NCT03038035	2016	mlc901	mlc901	supplement					non	novel, unsup	2
 alzheimer	NCT03038334	2017	magnesium sulfate	magnesium sulfate	supplement				CACNA1C	approved	metoo	5
 ftd/als	NCT03039673	2017	il-2	aldesleukin	approved		1277.5906913073238		IL2RB	approved	repurposing	3
-other/unspecified	NCT03044249	2017	mp-101	mp-101	experimental		230.2094455852156			non	novel, unsup	2
+alzheimer	NCT03044249	2017	mp-101	mp-101	experimental		230.2094455852156			non	novel, unsup	2
 parkinson	NCT03047629	2017	ent-01	ent-01	experimental		54.620123203285424			non	novel, unsup	2
 ftd/als	NCT03049046	2017	cc100	cc100	experimental					non	novel, unsup	2
 parkinson	NCT03051607	2017	tozadenant	tozadenant	experimental		50.776180698151954		ADORA2A	approved	metoo	5
@@ -1517,7 +1516,7 @@ parkinson	NCT03162874	2017	pxt002331 - dose 1	foliglurax	experimental		417.80698
 ftd/als	NCT03168711	2017	inosine	inosine	approved					non	repurposing	3
 alzheimer	NCT03168997	2017	memantine hydrochloride	memantine	approved	2003			GRIN1	approved	post-approval	7
 parkinson	NCT03173781	2016	droxidopa	droxidopa	approved		31.50718685831622		ADRA1A	approved	repurposing	3
-other/unspecified	NCT03174886	2017	aadvac1 160 µg	aadvac1	experimental		107.42505133470226		MAPT	non	novel, unsup	2
+ftd/als	NCT03174886	2017	aadvac1 160 µg	aadvac1	experimental		107.42505133470226	OMIM	MAPT	non	novel, supported	1
 alzheimer	NCT03179501	2017	np001	np001	experimental		3.646817248459959			non	novel, unsup	2
 alzheimer	NCT03184467	2017	gv1001 0.56 mg	gv1001	experimental				TERT	non	novel, unsup	2
 alzheimer	NCT03185208	2017	lithium carbonate	lithium	approved					non	repurposing	3
@@ -1612,7 +1611,7 @@ parkinson	NCT03462680	2016	niacin	niacin	supplement				HCAR3	approved	metoo	5
 ftd/als	NCT03472950	2018	ranolazine 1000 mg	ranolazine	approved					non	repurposing	3
 parkinson	NCT03482882	2018	pimavanserin	pimavanserin	approved		64.5968514715948		HTR2A	approved	repurposing	3
 alzheimer	NCT03486938	2019	agb101 220 mg tablet	levetiracetam	approved				SV2A	approved	repurposing	3
-other/unspecified	NCT03487263	2017	ic14	atibuclimab	experimental		12.457221081451062			non	novel, unsup	2
+ftd/als	NCT03487263	2017	ic14	atibuclimab	experimental		12.457221081451062			non	novel, unsup	2
 ftd/als	NCT03488524	2018	amx0035	sodium phenylbutyrate,tudca	combination					non	combination	4
 alzheimer	NCT03489044	2018	levetiracetam	levetiracetam	approved				SV2A	approved	repurposing	3
 ftd/als	NCT03489200	2017	eh301	nicotinamide riboside,pterostilbene	supplement		13.229295003422314			non	novel, unsup	2
@@ -1623,7 +1622,7 @@ parkinson	NCT03496870	2018	carbidopa levodopa	carbidopa,levodopa	combination		6.
 ftd/als	NCT03505021	2018	levosimendan	levosimendan	approved				TNNC1	approved	repurposing	3
 ftd/als	NCT03506425	2018	triheptanoin	triheptanoin	approved		11.498973305954825			non	repurposing	3
 alzheimer	NCT03507790	2018	ct1812	elayta	experimental					non	novel, unsup	2
-other/unspecified	NCT03508453	2018	ic14	atibuclimab	experimental					non	novel, unsup	2
+ftd/als	NCT03508453	2018	ic14	atibuclimab	experimental					non	novel, unsup	2
 alzheimer	NCT03514875	2019	mitoq	mitoq	supplement					non	novel, unsup	2
 huntington	NCT03515213	2017	fenofibrate	fenofibrate	approved				PPARA	approved	repurposing	3
 alzheimer	NCT03518073	2018	ly3303560	zagotenemab	experimental				MAPT	non	novel, unsup	2
@@ -1738,7 +1737,7 @@ alzheimer	NCT03822208	2019	al003	al003	experimental			OTG	CD33	approved	metoo	5
 alzheimer	NCT03823404	2019	cor388 capsule	atuzaginstat	experimental					non	novel, unsup	2
 alzheimer	NCT03824197	2019	extra virgin olive oil (evoo)	oleic acid	approved					non	repurposing	3
 alzheimer	NCT03828747	2019	semorinemab	semorinemab	experimental				MAPT	non	novel, unsup	2
-other/unspecified	NCT03829657	2019	ampreloxetine	ampreloxetine	experimental				SLC6A2	approved	metoo	5
+parkinson	NCT03829657	2019	ampreloxetine	ampreloxetine	experimental				SLC6A2	approved	metoo	5
 ftd/als	NCT03836716	2019	arimoclomol	arimoclomol	experimental					non	novel, unsup	2
 alzheimer	NCT03838952	2019	herbal medicine	jiaweixiaoyaosan,gouteng,bajitian	supplement					non	novel, unsup	2
 parkinson	NCT03840005	2018	ursonorm	ursodiol	approved				AKR1C2	approved	repurposing	3
@@ -1781,14 +1780,14 @@ alzheimer	NCT03978338	2019	brain polypeptide solution	brain polypeptide solution
 alzheimer	NCT03980730	2019	azeliragon	azeliragon	experimental				AGER	non	novel, unsup	2
 huntington	NCT03980938	2019	neflamapimod	neflamapimod	experimental				MAPK14	non	novel, unsup	2
 ftd/als	NCT03981536	2019	ap-101	ap-101	experimental			OMIM	SOD1	non	novel, supported	1
-other/unspecified	NCT03987295	2019	al001	al001	experimental				SORT1	non	novel, unsup	2
+ftd/als	NCT03987295	2019	al001	al001	experimental				SORT1	non	novel, unsup	2
 parkinson	NCT03987750	2019	safinamide methanesulfonate 100mg	safinamide	approved	2017			MAOB	approved	post-approval	7
 alzheimer	NCT03991195	2019	probiotic supplemented intervention	probiotic	supplement					non	novel, unsup	2
 alzheimer	NCT03991988	2019	montelukast	montelukast	approved				CYSLTR1	approved	repurposing	3
 huntington	NCT04000594	2019	ro7234292 (rg6042)	rg6042	experimental			OMIM	HTT	non	novel, supported	1
 alzheimer	NCT04004702	2020	levetiracetam	levetiracetam	approved				SV2A	approved	repurposing	3
 parkinson	NCT04006210	2019	carbidopa and levodopa 25mg/100mg	carbidopa,levodopa	combination				DRD1	approved	combination	4
-other/unspecified	NCT04044131	2019	metabolic cofactor supplementation	n-acetylcysteine,l-carnitine tartrate, nicotinamide riboside,serine	supplement					non	novel, unsup	2
+multiple	NCT04044131	2019	metabolic cofactor supplementation	n-acetylcysteine,l-carnitine tartrate, nicotinamide riboside,serine	supplement					non	novel, unsup	2
 parkinson	NCT04044547	2013	rotigotine, extended-release microspheres	rotigotine	approved	2007	92.97741273100615		DRD3	approved	post-approval	7
 parkinson	NCT04045678	2017	ly03003 ( rotigotine, extended-release microspheres)	rotigotine	approved	2007	50.841889117043124		DRD3	approved	post-approval	7
 alzheimer	NCT04052737	2018	pmz-1620 (sovateltide) along with standard treatment	sovateltide	experimental				EDNRB	approved	metoo	5
@@ -1811,7 +1810,7 @@ ftd/als	NCT04098406	2020	cnm-au8	gold nanoparticles	experimental					non	novel, 
 huntington	NCT04102579	2019	valbenazine	valbenazine	approved				SLC16A2	non	repurposing	3
 parkinson	NCT04110678	2015	neuroepo	neuroepo	experimental		30.39561943874059		EPOR	approved	metoo	5
 ftd/als	NCT04115384	2019	novolin-r insulin	insulin	approved				INSR	approved	repurposing	3
-other/unspecified	NCT04117178	2019	donepezil	donepezil	approved				ACHE	approved	repurposing	3
+multiple	NCT04117178	2019	donepezil	donepezil	approved				ACHE	approved	repurposing	3
 huntington	NCT04120493	2019	raav5-mihtt	raav5-mihtt	experimental			OMIM	HTT	non	novel, supported	1
 parkinson	NCT04127578	2019	pr001a	pr001a	experimental			OMIM	GBA	non	novel, supported	1
 parkinson	NCT04127695	2020	abbv-0805	abbv-0805	experimental			OMIM	SNCA	non	novel, supported	1
@@ -1829,7 +1828,7 @@ ftd/als	NCT04165850	2019	fixed dose combination ciprofloxacin/celecoxib	ciproflo
 parkinson	NCT04175132	2019	foliglurax	foliglurax	experimental				GRM4	non	novel, unsup	2
 ftd/als	NCT04176224	2019	mt-1186	edaravone	approved	2017	3.4496919917864477			non	post-approval	7
 parkinson	NCT04183634	2019	neupro (reference)	rotigotine	approved	2007			DRD3	approved	post-approval	7
-other/unspecified	NCT04184063	2019	nbmi	nbmi	experimental					non	novel, unsup	2
+multiple	NCT04184063	2019	nbmi	nbmi	experimental					non	novel, unsup	2
 alzheimer	NCT04191486	2019	t-817ma	edonerpic	experimental					non	novel, unsup	2
 parkinson	NCT04191577	2019	cvn424 high dose	cvn424	experimental					non	novel, unsup	2
 parkinson	NCT04201093	2019	tavapadon	tavapadon	experimental				DRD1	approved	metoo	5
