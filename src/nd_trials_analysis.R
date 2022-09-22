@@ -275,7 +275,7 @@ write(paste('Trials considered: ',nrow(trls_all),'\n',sep=''),text_stats_path,ap
 write(paste('Trials curated: ',nrow(trls),'\n',sep=''),text_stats_path,append=T)
 
 
-dem_qc =suppressWarnings(read_tsv('bigdata/dementia_qc.tsv', col_types=cols())) %>% # just one trial has a format error on line 1487, ignore this warning
+dem_qc =suppressWarnings(read_tsv('other_data/dementia_qc.tsv', col_types=cols())) %>% # just one trial has a format error on line 1487, ignore this warning
   clean_names() %>%
   mutate(start_date = parse_ct_dates(start_date)) %>%
   filter(start_date > as.Date('2000-01-01') & start_date < as.Date('2020-04-01'))
@@ -284,7 +284,7 @@ dem_in = sum(dem_qc$nct_number %in% trials$nct)
 dem_pct = percent(dem_in/dem_tot, digits=1)
 write(paste('Dementia search hits that are in our dataset: ',dem_in,'/',dem_tot,' (',dem_pct,')','\n',sep=''),text_stats_path,append=T)
 
-md_qc = read_tsv('bigdata/movement_disorder_qc.tsv', col_types=cols()) %>% 
+md_qc = read_tsv('other_data/movement_disorder_qc.tsv', col_types=cols()) %>% 
   clean_names() %>%
   mutate(start_date = parse_ct_dates(start_date)) %>%
   filter(start_date > as.Date('2000-01-01') & start_date < as.Date('2020-04-01'))
@@ -293,7 +293,7 @@ md_in = sum(md_qc$nct_number %in% trials$nct)
 md_pct = percent(md_in/md_tot, digits=1)
 write(paste('Movement disorder search hits that are in our dataset: ',md_in,'/',md_tot,' (',md_pct,')','\n',sep=''),text_stats_path,append=T)
 
-mci_qc = read_tsv('bigdata/mci_qc.tsv', col_types=cols()) %>% 
+mci_qc = read_tsv('other_data/mci_qc.tsv', col_types=cols()) %>% 
   clean_names() %>%
   mutate(start_date = parse_ct_dates(start_date)) %>%
   filter(start_date > as.Date('2000-01-01') & start_date < as.Date('2020-04-01'))
