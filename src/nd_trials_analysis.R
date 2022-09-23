@@ -1228,16 +1228,16 @@ enr_breaks = c(seq(0,450,50),Inf)
 
 s02_dur_hist = hist(de_scatter$dur[de_scatter$preventive], breaks=dur_breaks, plot=F)
 s02_dur_hist$mids = seq(0.25,4.75,.5)
-s02_dur_hist$density[length(s02_dur_hist$density)] = s02_dur_hist$counts[length(s02_dur_hist$density)] / (0.5 * sum(s02_dur_hist$counts))
+s02_dur_hist$density = s02_dur_hist$counts / sum(s02_dur_hist$counts)
 s34_dur_hist = hist(de_scatter$dur[!de_scatter$preventive], breaks=dur_breaks, plot=F)
 s34_dur_hist$mids = seq(0.25,4.75,.5)
-s34_dur_hist$density[length(s34_dur_hist$density)] = s34_dur_hist$counts[length(s34_dur_hist$density)] / (0.5 * sum(s34_dur_hist$counts))
+s34_dur_hist$density = s34_dur_hist$counts / sum(s34_dur_hist$counts)
 s02_enr_hist = hist(de_scatter$enr[de_scatter$preventive], breaks=enr_breaks, plot=F)
 s02_enr_hist$mids = seq(25,475,50)
-s02_enr_hist$density[length(s02_enr_hist$density)] = s02_enr_hist$counts[length(s02_enr_hist$density)] / (50 * sum(s02_enr_hist$counts))
+s02_enr_hist$density = s02_enr_hist$counts / sum(s02_enr_hist$counts)
 s34_enr_hist = hist(de_scatter$enr[!de_scatter$preventive], breaks=enr_breaks, plot=F)
 s34_enr_hist$mids = seq(25,475,50)
-s34_enr_hist$density[length(s34_enr_hist$density)] = s34_enr_hist$counts[length(s34_enr_hist$density)] / (50 * sum(s34_enr_hist$counts))
+s34_enr_hist$density = s34_enr_hist$counts / sum(s34_enr_hist$counts)
 
 
 
@@ -1262,11 +1262,11 @@ legend(x=max(xlims), y=max(ylims)+300, legend=c('stages 0-2', 'stages 3-4'), pch
 par(xpd=F)
 mtext(LETTERS[panel], side=3, cex=1.5, adj = -0.1, line = 0.5); panel = panel + 1
 
-rightset = 1.05
+rightset = 1.02
 s02_offset= -10
 s34_offset= 10
 barwidth = 20
-heights = c(s02_enr_hist$density, s34_enr_hist$density)*100
+heights = c(s02_enr_hist$density, s34_enr_hist$density)*2
 hcolors = c(rep(s02_col, length(s02_enr_hist$density)), rep(s34_col, length(s34_enr_hist$density)))
 ymids = c(s02_enr_hist$mids + s02_offset, s34_enr_hist$mids + s34_offset)
 par(xpd=T)
