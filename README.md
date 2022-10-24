@@ -1,6 +1,6 @@
 This repository holds the data and source code for the following manuscript:
 
-[Mortberg MA, Vallabh SM, Minikel EV. **Disease stages and therapeutic hypotheses in two decades of neurodegenerative disease clinical trials.** _medRxiv._ June 15, 2022. doi: 10.1101/2022.06.16.22276513](https://doi.org/10.1101/2022.06.16.22276513)
+[Mortberg MA, Vallabh SM, Minikel EV. **Disease stages and therapeutic hypotheses in two decades of neurodegenerative disease clinical trials.** _Sci Rep._ 2022 Oct 21;12(1):17708. doi: 10.1038/s41598-022-21820-1. PMID: 36271285; PMCID: PMC9587287.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9587287/)
 
 #### What's here
 
